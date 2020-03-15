@@ -42,6 +42,7 @@ class SignUpActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(
             inp_email_reg.text.toString(),
             inp_pass_reg.text.toString()
+
         )
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {

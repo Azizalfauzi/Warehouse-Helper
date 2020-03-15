@@ -31,14 +31,14 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun doLogin() {
-        if (inp_email_reg.text.toString().isEmpty()) {
-            inp_email_reg.error = "plase enter email"
-            inp_email_reg.requestFocus()
+        if (inp_email_login.text.toString().isEmpty()) {
+            inp_email_login.error = "plase enter email"
+            inp_email_login.requestFocus()
             return
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(inp_email_reg.text.toString()).matches()) {
-            inp_email_reg.error = "plase enter email"
-            inp_email_reg.requestFocus()
+        if (!Patterns.EMAIL_ADDRESS.matcher(inp_email_login.text.toString()).matches()) {
+            inp_email_login.error = "plase enter email"
+            inp_email_login.requestFocus()
             return
         }
         if (inp_pass_login.text.toString().isEmpty()) {

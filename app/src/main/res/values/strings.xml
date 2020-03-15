@@ -21,4 +21,8 @@
     <string name="email">Email</string>
     <string name="t_reg">Belum punya akun ?</string>
     <string name="bt_reg_login">Sign Up</string>
+    <string name="t_email" />
+    <string name="t_pass" />
+    <string name="t_berhasil">Selamat Datang di Warehouse Helper</string>
+    <string name="bt_logout">"Logout "</string>
 </resources>
