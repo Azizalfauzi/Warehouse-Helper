@@ -20,11 +20,15 @@ class OnboardingDua : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentOnboardingDuaBinding>(inflater,
-            R.layout.fragment_onboarding_dua,container,false)
-            binding.btnNextdua.setOnClickListener { view:View->view.findNavController().navigate(
+        val binding = DataBindingUtil.inflate<FragmentOnboardingDuaBinding>(
+            inflater,
+            R.layout.fragment_onboarding_dua, container, false
+        )
+        binding.btnNextdua.setOnClickListener { view: View ->
+            view.findNavController().navigate(
                 R.id.action_onboardingDua_to_onboardingTiga
-            ) }
+            )
+        }
         return binding.root
     }
 

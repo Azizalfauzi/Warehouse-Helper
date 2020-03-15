@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_onboardingSatu_to_onboardingDua"
             app:destination="@id/onboardingDua" />
+        <action
+            android:id="@+id/action_onboardingSatu_to_loginActivity"
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/onboardingDua"
@@ -27,5 +30,24 @@
         android:id="@+id/onboardingTiga"
         android:name="org.d3ifcool.warehousehelper.boading.OnboardingTiga"
         android:label="fragment_onboarding_tiga"
-        tools:layout="@layout/fragment_onboarding_tiga" />
+        tools:layout="@layout/fragment_onboarding_tiga" >
+        <action
+            android:id="@+id/action_onboardingTiga_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="org.d3ifcool.warehousehelper.autentifikasi.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/aboutActivity"
+        android:name="org.d3ifcool.warehousehelper.AboutActivity"
+        android:label="activity_about"
+        tools:layout="@layout/activity_about" />
+    <activity
+        android:id="@+id/signUpActivity"
+        android:name="org.d3ifcool.warehousehelper.autentifikasi.SignUpActivity"
+        android:label="activity_sign_up"
+        tools:layout="@layout/activity_sign_up" />
 </navigation>

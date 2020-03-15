@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.FragmentOnboardingTigaBinding
 
@@ -25,8 +26,9 @@ class OnboardingTiga : Fragment() {
             container,
             false
         )
-
+        binding.btnNexttiga.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_onboardingTiga_to_loginActivity)
+        }
         return binding.root
     }
-
 }

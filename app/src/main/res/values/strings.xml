@@ -19,4 +19,6 @@
     <string name="regpassword">Password</string>
     <string name="btn_register">Register</string>
     <string name="email">Email</string>
+    <string name="t_reg">Belum punya akun ?</string>
+    <string name="bt_reg_login">Sign Up</string>
 </resources>
