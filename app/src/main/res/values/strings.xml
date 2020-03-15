@@ -10,4 +10,13 @@
     <string name="memudahkan_petugas_logistik_untuk_melakukan_pencarian_barang">Memudahkan Petugas Logistik untuk melakukan pencarian barang</string>
     <string name="Keluar">Keluar Barang</string>
     <string name="btn_keluar">NEXT</string>
+    <string name="tvlogin">Login</string>
+    <string name="tvemail">Email</string>
+    <string name="tvpasswordlog">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="regnama">Nama</string>
+    <string name="register">Register</string>
+    <string name="regpassword">Password</string>
+    <string name="btn_register">Register</string>
+    <string name="email">Email</string>
 </resources>

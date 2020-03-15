@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import org.d3ifcool.warehousehelper.R
+import org.d3ifcool.warehousehelper.databinding.FragmentOnboardingTigaBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -17,7 +19,14 @@ class OnboardingTiga : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_onboarding_tiga, container, false)
+        val binding = DataBindingUtil.inflate<FragmentOnboardingTigaBinding>(
+            inflater,
+            R.layout.fragment_onboarding_tiga,
+            container,
+            false
+        )
+
+        return binding.root
     }
 
 }
