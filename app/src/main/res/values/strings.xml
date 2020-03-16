@@ -25,4 +25,6 @@
     <string name="t_pass" />
     <string name="t_berhasil">Selamat Datang di Warehouse Helper</string>
     <string name="bt_logout">"Logout "</string>
+    <string name="t_logo">Warehouse Helper</string>
+    <string name="t_letstour">Lets Tour !</string>
 </resources>

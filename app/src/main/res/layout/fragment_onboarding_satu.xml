@@ -57,22 +57,26 @@
 
     <Button
         android:id="@+id/btn_nextsatu"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_button_2"
         android:text="@string/next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_kalimatsatu"
+        app:layout_constraintStart_toStartOf="@+id/tv_kalimatsatu"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/btn_skipsatu"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@drawable/custom_button_2"
         android:text="SKIP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_nextsatu"
+        app:layout_constraintStart_toStartOf="@+id/btn_nextsatu"
         app:layout_constraintTop_toBottomOf="@+id/btn_nextsatu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

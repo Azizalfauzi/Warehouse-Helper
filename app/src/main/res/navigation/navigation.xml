@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/onboardingSatu">
+    app:startDestination="@id/splashScreenFragment">
 
     <fragment
         android:id="@+id/onboardingSatu"
@@ -50,4 +50,18 @@
         android:name="org.d3ifcool.warehousehelper.autentifikasi.SignUpActivity"
         android:label="activity_sign_up"
         tools:layout="@layout/activity_sign_up" />
+    <activity
+        android:id="@+id/dashboardActivity"
+        android:name="org.d3ifcool.warehousehelper.DashboardActivity"
+        android:label="activity_dashboard"
+        tools:layout="@layout/activity_dashboard" />
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="org.d3ifcool.warehousehelper.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_onboardingSatu"
+            app:destination="@id/onboardingSatu" />
+    </fragment>
 </navigation>
