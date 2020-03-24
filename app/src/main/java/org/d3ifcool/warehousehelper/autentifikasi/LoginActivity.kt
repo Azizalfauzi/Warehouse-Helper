@@ -4,14 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_sign_up.*
-import org.d3ifcool.warehousehelper.DashboardActivity
+import org.d3ifcool.warehousehelper.AboutActivity
+import org.d3ifcool.warehousehelper.Dashboard.DashboardActivity
 import org.d3ifcool.warehousehelper.R
+import org.d3ifcool.warehousehelper.databinding.ActivityAboutBinding
 import org.d3ifcool.warehousehelper.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

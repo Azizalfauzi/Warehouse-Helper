@@ -8,8 +8,7 @@
     <fragment
         android:id="@+id/onboardingSatu"
         android:name="org.d3ifcool.warehousehelper.boading.OnboardingSatu"
-        android:label="fragment_onboarding_satu"
-        tools:layout="@layout/fragment_onboarding_satu" >
+        tools:layout="@layout/fragment_onboarding_satu">
         <action
             android:id="@+id/action_onboardingSatu_to_onboardingDua"
             app:destination="@id/onboardingDua" />
@@ -20,8 +19,7 @@
     <fragment
         android:id="@+id/onboardingDua"
         android:name="org.d3ifcool.warehousehelper.boading.OnboardingDua"
-        android:label="fragment_onboarding_dua"
-        tools:layout="@layout/fragment_onboarding_dua" >
+        tools:layout="@layout/fragment_onboarding_dua">
         <action
             android:id="@+id/action_onboardingDua_to_onboardingTiga"
             app:destination="@id/onboardingTiga" />
@@ -29,8 +27,7 @@
     <fragment
         android:id="@+id/onboardingTiga"
         android:name="org.d3ifcool.warehousehelper.boading.OnboardingTiga"
-        android:label="fragment_onboarding_tiga"
-        tools:layout="@layout/fragment_onboarding_tiga" >
+        tools:layout="@layout/fragment_onboarding_tiga">
         <action
             android:id="@+id/action_onboardingTiga_to_loginActivity"
             app:destination="@id/loginActivity" />
@@ -41,7 +38,7 @@
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
     <activity
-        android:id="@+id/aboutActivity"
+        android:id="@+id/menu_about"
         android:name="org.d3ifcool.warehousehelper.AboutActivity"
         android:label="activity_about"
         tools:layout="@layout/activity_about" />
@@ -50,18 +47,17 @@
         android:name="org.d3ifcool.warehousehelper.autentifikasi.SignUpActivity"
         android:label="activity_sign_up"
         tools:layout="@layout/activity_sign_up" />
-    <activity
-        android:id="@+id/dashboardActivity"
-        android:name="org.d3ifcool.warehousehelper.DashboardActivity"
-        android:label="activity_dashboard"
-        tools:layout="@layout/activity_dashboard" />
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="org.d3ifcool.warehousehelper.SplashScreenFragment"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
+        android:name="org.d3ifcool.warehousehelper.boading.SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen">
         <action
             android:id="@+id/action_splashScreenFragment_to_onboardingSatu"
             app:destination="@id/onboardingSatu" />
     </fragment>
+    <activity
+        android:id="@+id/dashboardActivity"
+        android:name="org.d3ifcool.warehousehelper.Dashboard.DashboardActivity"
+        android:label="@string/app_name_dashboard"
+        tools:layout="@layout/activity_dashboard" />
 </navigation>
