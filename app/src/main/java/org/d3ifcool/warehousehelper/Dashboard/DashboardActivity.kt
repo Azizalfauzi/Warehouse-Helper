@@ -7,40 +7,47 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import org.d3ifcool.warehousehelper.AboutActivity
 import org.d3ifcool.warehousehelper.R
+import org.d3ifcool.warehousehelper.tambahdata.TambahData
 import org.d3ifcool.warehousehelper.autentifikasi.LoginActivity
 import org.d3ifcool.warehousehelper.databinding.ActivityDashboardBinding
 
 
-
 class DashboardActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityDashboardBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = DataBindingUtil.setContentView<ActivityDashboardBinding>(
-            this,
-            R.layout.activity_dashboard
-        )
-        binding.btLogout.setOnClickListener {
-            signOut()
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard)
+        supportActionBar?.title = "Warehouse Helper"
+        binding.btTambahBarang.setOnClickListener {
+            startActivity(Intent(this,
+                TambahData::class.java))
         }
+
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.overflow_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_about -> startActivity(Intent(this, AboutActivity::class.java))
+        }
+        if (item.itemId == R.id.logout) {
+            signOut()
+            finishAffinity()
         }
         return super.onOptionsItemSelected(item)
     }
 
 
-    private fun signOut() {
+     fun signOut() {
         // [START auth_sign_out]
         startActivity(Intent(this, LoginActivity::class.java))
         FirebaseAuth.getInstance().signOut()

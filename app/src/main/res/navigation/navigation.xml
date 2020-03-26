@@ -60,4 +60,9 @@
         android:name="org.d3ifcool.warehousehelper.Dashboard.DashboardActivity"
         android:label="@string/app_name_dashboard"
         tools:layout="@layout/activity_dashboard" />
+    <activity
+        android:id="@+id/tambahData"
+        android:name="org.d3ifcool.warehousehelper.tambahdata.TambahData"
+        android:label="activity_tambah_data"
+        tools:layout="@layout/activity_tambah_data" />
 </navigation>

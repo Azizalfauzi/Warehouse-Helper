@@ -45,4 +45,5 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
     implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
+
 }

@@ -31,4 +31,12 @@
     <string name="aboutmenu">About</string>
     <string name="t_selamat_datang">Selamat</string>
     <string name="t_datang">Datang</string>
+    <string name="t_logout">Logout</string>
+    <string name="t_nama_barang">"Nama Barang "</string>
+    <string name="t_jumlah_barang">Jumlah Barang</string>
+    <string name="t_harga_barang">Harga Barang</string>
+    <string name="t_tanggal">Barang masuk  :</string>
+    <string name="t_tanggal_pilihan">DD-MM-YYYY</string>
+    <string name="bt_tambah">Tambah Barang</string>
+    <string name="bt_kembali">Back</string>
 </resources>
