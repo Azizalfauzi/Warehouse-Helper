@@ -14,7 +14,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/inp_nama_barang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -28,7 +28,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/inp_jumlah_barang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -39,10 +39,10 @@
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/inp_nama_barang" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/inp_harga_barang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -50,33 +50,10 @@
                 android:layout_marginEnd="32dp"
                 android:ems="10"
                 android:hint="@string/t_harga_barang"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:text="@string/t_tanggal"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText3" />
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="150dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="32dp"
-                android:background="@drawable/custom_button_2"
-                android:text="@string/t_tanggal_pilihan"
-                android:textColor="@color/colorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/textView6"
-                app:layout_constraintStart_toEndOf="@+id/textView6"
-                app:layout_constraintTop_toTopOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/inp_jumlah_barang" />
 
             <Button
                 android:id="@+id/bt_back_tambah_barang"
@@ -105,6 +82,39 @@
                 app:layout_constraintBottom_toTopOf="@+id/bt_back_tambah_barang"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/tv_tanggal_pilihan"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                app:srcCompat="@drawable/ic_calendar_2"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/t_barang_masuk"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inp_harga_barang" />
+
+            <TextView
+                android:id="@+id/tv_hasil_tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/t_tanggal_pilihan"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_tanggal_pilihan"
+                app:layout_constraintStart_toEndOf="@+id/tv_tanggal_pilihan"
+                app:layout_constraintTop_toTopOf="@+id/tv_tanggal_pilihan" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

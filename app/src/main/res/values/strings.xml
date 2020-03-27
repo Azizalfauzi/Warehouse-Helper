@@ -39,4 +39,5 @@
     <string name="t_tanggal_pilihan">DD-MM-YYYY</string>
     <string name="bt_tambah">Tambah Barang</string>
     <string name="bt_kembali">Back</string>
+    <string name="t_barang_masuk">Tanggal Barang Masuk :</string>
 </resources>
