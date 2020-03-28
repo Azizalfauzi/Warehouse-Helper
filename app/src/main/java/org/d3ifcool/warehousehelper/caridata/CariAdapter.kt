@@ -84,7 +84,6 @@ class CariAdapter(val mCtx: Context, val layoutResId: Int, val dataList: List<Da
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-
                 val data = Data(data.id, nama_barang, jumlah_barang, harga_barang, tanggal_masuk)
                 dbData.child(data.id).setValue(data)
                 Toast.makeText(mCtx, "Data Berhasil di Update!", Toast.LENGTH_SHORT).show()
