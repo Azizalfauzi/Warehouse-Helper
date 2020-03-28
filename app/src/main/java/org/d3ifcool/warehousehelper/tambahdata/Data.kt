@@ -6,4 +6,8 @@ class Data(
     val jumlah_barang: Int,
     val hargaBarang: Int,
     val tanggal_masuk: String
-)
+) {
+    constructor() : this("", "", 0, 0, "") {
+
+    }
+}

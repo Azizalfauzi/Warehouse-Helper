@@ -47,4 +47,7 @@ dependencies {
     implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
 
+    implementation 'com.firebaseui:firebase-ui-database:6.2.1'
+
+
 }

@@ -40,4 +40,7 @@
     <string name="bt_tambah">Tambah Barang</string>
     <string name="bt_kembali">Back</string>
     <string name="t_barang_masuk">Tanggal Barang Masuk :</string>
+    <string name="t_search">Serach Data...</string>
+    <string name="bt_edit_data">"Edit "</string>
+    <string name="t_jumlah_cari_data">(Jumlah Barang)</string>
 </resources>

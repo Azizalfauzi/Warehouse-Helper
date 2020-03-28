@@ -4,11 +4,8 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
-import android.widget.DatePicker
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_tambah_data.*
 import org.d3ifcool.warehousehelper.Dashboard.DashboardActivity

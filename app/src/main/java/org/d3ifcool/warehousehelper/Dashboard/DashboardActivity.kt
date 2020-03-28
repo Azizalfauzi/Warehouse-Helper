@@ -12,6 +12,7 @@ import org.d3ifcool.warehousehelper.AboutActivity
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.tambahdata.TambahData
 import org.d3ifcool.warehousehelper.autentifikasi.LoginActivity
+import org.d3ifcool.warehousehelper.caridata.CariData
 import org.d3ifcool.warehousehelper.databinding.ActivityDashboardBinding
 
 
@@ -26,7 +27,9 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(Intent(this,
                 TambahData::class.java))
         }
-
+        binding.btCariBarang.setOnClickListener {
+            startActivity(Intent(this,CariData::class.java))
+        }
     }
 
 
