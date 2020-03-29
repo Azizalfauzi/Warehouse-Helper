@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <EditText
-        android:id="@+id/inp_nama_barang"
+        android:id="@+id/tv_hasil_nama_find"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/inp_jumlah_barang"
+        android:id="@+id/inp_jumlah_barang_find"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -31,10 +31,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_nama_barang" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_hasil_nama_find" />
 
     <EditText
-        android:id="@+id/inp_harga_barang"
+        android:id="@+id/inp_harga_barang_find"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -45,7 +45,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_jumlah_barang" />
+        app:layout_constraintTop_toBottomOf="@+id/inp_jumlah_barang_find" />
 
     <ImageView
         android:id="@+id/tv_tanggal_pilihan"
@@ -67,10 +67,10 @@
         android:text="@string/t_barang_masuk"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inp_harga_barang" />
+        app:layout_constraintTop_toBottomOf="@+id/inp_harga_barang_find" />
 
     <TextView
-        android:id="@+id/tv_hasil_tanggal"
+        android:id="@+id/tv_hasil_tanggal_find"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

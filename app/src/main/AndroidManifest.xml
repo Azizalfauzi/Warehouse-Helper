@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".caridata.CariData"></activity>
+        <activity android:name=".inventaris.CariData"></activity>
         <activity android:name=".tambahdata.TambahData" />
         <activity android:name=".Dashboard.DashboardActivity" />
         <activity android:name=".AboutActivity" />

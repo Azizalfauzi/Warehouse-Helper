@@ -43,4 +43,8 @@
     <string name="t_search">Serach Data...</string>
     <string name="bt_edit_data">"Edit "</string>
     <string name="t_jumlah_cari_data">(Jumlah Barang)</string>
+    <string name="t_find_nama">Nama Barang :</string>
+    <string name="t_find_jumlah">Jumlah Barang :</string>
+    <string name="t_find_harga">Harga Barang :</string>
+    <string name="bt_bacak_find">Kembali</string>
 </resources>

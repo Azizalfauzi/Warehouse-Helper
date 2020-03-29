@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".caridata.CariData">
+    tools:context=".inventaris.CariData">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,9 +17,7 @@
                 android:id="@+id/inp_cari_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="32dp"
                 android:ems="10"
                 android:hint="@string/t_search"
                 android:inputType="textPersonName"
@@ -29,7 +27,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/bt_cari_data"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="@+id/inp_cari_data"

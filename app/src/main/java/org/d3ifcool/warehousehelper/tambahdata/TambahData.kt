@@ -52,20 +52,20 @@ class TambahData : AppCompatActivity() {
     }
 
     private fun saveData() {
-        if (inp_nama_barang.text.isEmpty()) {
-            inp_nama_barang.error = "Masukan Nama barang"
+        if (tv_hasil_nama_find.text.isEmpty()) {
+            tv_hasil_nama_find.error = "Masukan Nama barang"
             return
-        } else if (inp_jumlah_barang.text.isEmpty()) {
-            inp_jumlah_barang.error = "Masukan Jumlah Barang"
+        } else if (inp_jumlah_barang_find.text.isEmpty()) {
+            inp_jumlah_barang_find.error = "Masukan Jumlah Barang"
             return
-        } else if (inp_harga_barang.text.isEmpty()) {
-            inp_harga_barang.error = "Masukan Jumlah Harga"
+        } else if (inp_harga_barang_find.text.isEmpty()) {
+            inp_harga_barang_find.error = "Masukan Jumlah Harga"
             return
         } else {
-            val namaBarang = inp_nama_barang.text.toString().trim()
-            val jumlahBarang = inp_jumlah_barang.text.toString().toInt()
-            val hargaBarang = inp_harga_barang.text.toString().toInt()
-            val tanggal_masuk = tv_hasil_tanggal.text.toString().trim()
+            val namaBarang = tv_hasil_nama_find.text.toString().trim()
+            val jumlahBarang = inp_jumlah_barang_find.text.toString().toInt()
+            val hargaBarang = inp_harga_barang_find.text.toString().toInt()
+            val tanggal_masuk = tv_hasil_tanggal_find.text.toString().trim()
 
             val ref = FirebaseDatabase.getInstance().getReference("WarehouseHelper")
 
@@ -90,17 +90,17 @@ class TambahData : AppCompatActivity() {
         val dpd = DatePickerDialog(
             this,
             DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
-                tv_hasil_tanggal.text = ("$mDay/$mMonth/$mYear")
+                tv_hasil_tanggal_find.text = ("$mDay/$mMonth/$mYear")
             }, year, month, day
         )
         dpd.show()
     }
 
     fun isClear() {
-        inp_jumlah_barang.text.clear()
-        inp_nama_barang.text.clear()
-        inp_harga_barang.text.clear()
-        tv_hasil_tanggal.text="DD/MM/YYYY"
+        inp_jumlah_barang_find.text.clear()
+        tv_hasil_nama_find.text.clear()
+        inp_harga_barang_find.text.clear()
+        tv_hasil_tanggal_find.text="DD/MM/YYYY"
     }
 
     fun isInRange(a: Int): Boolean {

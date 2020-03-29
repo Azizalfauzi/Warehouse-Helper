@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.caridata
+package org.d3ifcool.warehousehelper.inventaris
 
 import android.app.AlertDialog
 import android.content.Context
@@ -18,12 +18,10 @@ class CariAdapter(val mCtx: Context, val layoutResId: Int, val dataList: List<Da
         val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
         val view: View = layoutInflater.inflate(layoutResId, null)
 
-
         //read data target
         val tv_nama_barang_update = view.findViewById<TextView>(R.id.tv_nama_barang_update)
         val tv_jumlah_barang_update = view.findViewById<TextView>(R.id.tv_jumlah_barang_update)
         val bt_update_barang = view.findViewById<Button>(R.id.bt_update_cari_barang)
-
 
         val data = dataList[position]
 
@@ -33,6 +31,7 @@ class CariAdapter(val mCtx: Context, val layoutResId: Int, val dataList: List<Da
         bt_update_barang.setOnClickListener {
             showUpdateDialog(data)
         }
+
         return view
     }
 
@@ -43,10 +42,10 @@ class CariAdapter(val mCtx: Context, val layoutResId: Int, val dataList: List<Da
         val view = inflater.inflate(R.layout.list_data_cari_update, null)
 
         //inputan yang akan di edit
-        val inp_nama_update = view.findViewById<EditText>(R.id.inp_nama_barang)
-        val inp_jumlah_update = view.findViewById<EditText>(R.id.inp_jumlah_barang)
-        val inp_harga_update = view.findViewById<EditText>(R.id.inp_harga_barang)
-        val tanggal_masuk_update = view.findViewById<TextView>(R.id.tv_hasil_tanggal)
+        val inp_nama_update = view.findViewById<EditText>(R.id.tv_hasil_nama_find)
+        val inp_jumlah_update = view.findViewById<EditText>(R.id.inp_jumlah_barang_find)
+        val inp_harga_update = view.findViewById<EditText>(R.id.inp_harga_barang_find)
+        val tanggal_masuk_update = view.findViewById<TextView>(R.id.tv_hasil_tanggal_find)
 
         inp_nama_update.setText(data.nama_barang)
         inp_jumlah_update.setText(data.jumlah_barang.toString())

@@ -12,7 +12,7 @@ import org.d3ifcool.warehousehelper.AboutActivity
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.tambahdata.TambahData
 import org.d3ifcool.warehousehelper.autentifikasi.LoginActivity
-import org.d3ifcool.warehousehelper.caridata.CariData
+import org.d3ifcool.warehousehelper.inventaris.CariData
 import org.d3ifcool.warehousehelper.databinding.ActivityDashboardBinding
 
 
