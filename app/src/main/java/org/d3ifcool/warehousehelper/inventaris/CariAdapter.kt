@@ -21,7 +21,8 @@ class CariAdapter(val mCtx: Context, val layoutResId: Int, val dataList: List<Da
         //read data target
         val tv_nama_barang_update = view.findViewById<TextView>(R.id.tv_nama_barang_update)
         val tv_jumlah_barang_update = view.findViewById<TextView>(R.id.tv_jumlah_barang_update)
-        val bt_update_barang = view.findViewById<Button>(R.id.bt_update_cari_barang)
+        val bt_update_barang = view.findViewById<ImageView>(R.id.bt_update_cari_barang)
+        val bt_delete_barangg = view.findViewById<ImageView>(R.id.bt_delete_data)
 
         val data = dataList[position]
 
@@ -31,8 +32,30 @@ class CariAdapter(val mCtx: Context, val layoutResId: Int, val dataList: List<Da
         bt_update_barang.setOnClickListener {
             showUpdateDialog(data)
         }
-
+        bt_delete_barangg.setOnClickListener {
+            showDeleteDialog(data)
+        }
         return view
+    }
+
+    fun showDeleteDialog(data: Data) {
+        val builder = AlertDialog.Builder(mCtx)
+        val inflater = LayoutInflater.from(mCtx)
+        val view = inflater.inflate(R.layout.list_data_cari_delete, null)
+
+        builder.setView(view)
+        builder.setPositiveButton("Delete") { p0, p1 ->
+            FirebaseDatabase.getInstance().reference
+                .child("WarehouseHelper")
+                .child(data.id)
+                .removeValue()
+            Toast.makeText(context, "Data Barang Berhasil Terhapus", Toast.LENGTH_SHORT).show()
+        }
+        builder.setNegativeButton("No") { p0, p1 ->
+
+        }
+        val alert = builder.create()
+        alert.show()
     }
 
     fun showUpdateDialog(data: Data) {

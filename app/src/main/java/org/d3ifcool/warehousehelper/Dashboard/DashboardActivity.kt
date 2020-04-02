@@ -30,6 +30,9 @@ class DashboardActivity : AppCompatActivity() {
         binding.btCariBarang.setOnClickListener {
             startActivity(Intent(this,CariData::class.java))
         }
+        binding.btPinjamBarang.setOnClickListener {
+
+        }
     }
 
 

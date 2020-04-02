@@ -27,18 +27,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nama_barang_update" />
 
-    <Button
-        android:id="@+id/bt_update_cari_barang"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/custom_bt_logout"
-        android:text="@string/bt_edit_data"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
@@ -48,4 +36,26 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_jumlah_barang_update"
         app:layout_constraintStart_toEndOf="@+id/tv_jumlah_barang_update"
         app:layout_constraintTop_toTopOf="@+id/tv_jumlah_barang_update" />
+
+    <ImageView
+        android:id="@+id/bt_update_cari_barang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_delete_data"
+        app:layout_constraintEnd_toStartOf="@+id/bt_delete_data"
+        app:layout_constraintTop_toTopOf="@+id/bt_delete_data"
+        app:srcCompat="@drawable/ic_update_data"
+        tools:ignore="ContentDescription,VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/bt_delete_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_delete_data"
+        tools:ignore="ContentDescription,VectorDrawableCompat" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,12 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#00F44336</item>
-        <item name="colorPrimaryDark">#00F44336</item>
+        <item name="colorPrimary">#00FFFFFF</item>
+        <item name="colorPrimaryDark">#00FFFFFF</item>
         <item name="colorAccent">#F44336</item>
     </style>
 
-    <style name="AppTheme.PopupOverlay">popupoverlay</style>
 
 
 </resources>

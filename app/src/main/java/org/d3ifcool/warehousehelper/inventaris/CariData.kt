@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.*
@@ -28,8 +29,11 @@ class CariData : AppCompatActivity() {
 
 //        fungsi read data
         binding.btCariData.setOnClickListener {
-            //            showFindAlert()
-            cariSingleData()
+            if (inp_cari_data.text.isEmpty()){
+                Toast.makeText(applicationContext,"Inputan tidak boleh kosong!",Toast.LENGTH_SHORT).show()
+            }else{
+                cariSingleData()
+            }
         }
 
 

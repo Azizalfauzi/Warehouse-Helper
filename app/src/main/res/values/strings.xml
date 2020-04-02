@@ -47,4 +47,6 @@
     <string name="t_find_jumlah">Jumlah Barang :</string>
     <string name="t_find_harga">Harga Barang :</string>
     <string name="bt_bacak_find">Kembali</string>
+    <string name="bt_delete">Delete</string>
+    <string name="t_hapus_data">Apakah anda akan menghapus data ini ?</string>
 </resources>
