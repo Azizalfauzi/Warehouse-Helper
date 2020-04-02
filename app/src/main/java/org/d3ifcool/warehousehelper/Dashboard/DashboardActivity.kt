@@ -14,6 +14,7 @@ import org.d3ifcool.warehousehelper.tambahdata.TambahData
 import org.d3ifcool.warehousehelper.autentifikasi.LoginActivity
 import org.d3ifcool.warehousehelper.inventaris.CariData
 import org.d3ifcool.warehousehelper.databinding.ActivityDashboardBinding
+import org.d3ifcool.warehousehelper.pinjambarang.TambahDataPeminjaman
 
 
 class DashboardActivity : AppCompatActivity() {
@@ -24,19 +25,23 @@ class DashboardActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard)
         supportActionBar?.title = "Warehouse Helper"
         binding.btTambahBarang.setOnClickListener {
-            startActivity(Intent(this,
-                TambahData::class.java))
+            startActivity(
+                Intent(
+                    this,
+                    TambahData::class.java
+                )
+            )
         }
         binding.btCariBarang.setOnClickListener {
-            startActivity(Intent(this,CariData::class.java))
+            startActivity(Intent(this, CariData::class.java))
         }
         binding.btPinjamBarang.setOnClickListener {
-
+            startActivity(Intent(this, TambahDataPeminjaman::class.java))
         }
     }
 
 
-        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.overflow_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
@@ -53,7 +58,7 @@ class DashboardActivity : AppCompatActivity() {
     }
 
 
-     fun signOut() {
+    fun signOut() {
         // [START auth_sign_out]
         startActivity(Intent(this, LoginActivity::class.java))
         FirebaseAuth.getInstance().signOut()

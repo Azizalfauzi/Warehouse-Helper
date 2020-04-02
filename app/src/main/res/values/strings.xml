@@ -49,4 +49,17 @@
     <string name="bt_bacak_find">Kembali</string>
     <string name="bt_delete">Delete</string>
     <string name="t_hapus_data">Apakah anda akan menghapus data ini ?</string>
+    <string name="t_nama_peminjaman">Nama Peminjam</string>
+    <string name="t_nim_peminjam">NIM</string>
+    <string name="t_kelas_peminjam">Kelas</string>
+    <string name="t_barang_pinjam">Barang Yang Dipinjam</string>
+    <string name="t_jumlah_pinjam">Jumlah</string>
+    <string name="t_kata_pinjam">Barang Yang Dipinjam</string>
+    <string name="t_kata_jumlah">Jumlah</string>
+    <string name="t_jam_masuk_pinjaman">Waktu Pinjaman :</string>
+    <string name="t_jamkembali_pinjaman">Waktu Pengembalian :</string>
+    <string name="t_hasil_jam_masuk_peminjaman">00.00</string>
+    <string name="t_hasil_keluar_jam_peminjaman">00.00</string>
+    <string name="t_pinjam_barang">Pinjam Barang</string>
+    <string name="t_back_peminjaman">Kembali</string>
 </resources>

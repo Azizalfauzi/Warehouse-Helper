@@ -72,10 +72,6 @@ class CariData : AppCompatActivity() {
         return true
     }
 
-    fun showFindAlert() {
-
-//        cariSingleData()
-    }
 
     fun cariSingleData() {
         //inflate the dialog

@@ -15,7 +15,7 @@ import java.util.*
 
 class TambahData : AppCompatActivity() {
     private lateinit var binding: ActivityTambahDataBinding
-    private var total = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(
