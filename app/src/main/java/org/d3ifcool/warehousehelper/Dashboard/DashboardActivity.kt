@@ -15,6 +15,7 @@ import org.d3ifcool.warehousehelper.autentifikasi.LoginActivity
 import org.d3ifcool.warehousehelper.inventaris.CariData
 import org.d3ifcool.warehousehelper.databinding.ActivityDashboardBinding
 import org.d3ifcool.warehousehelper.pinjambarang.TambahDataPeminjaman
+import org.d3ifcool.warehousehelper.riwayatpeminjaman.RiwayatPeminjaman
 
 
 class DashboardActivity : AppCompatActivity() {
@@ -37,6 +38,9 @@ class DashboardActivity : AppCompatActivity() {
         }
         binding.btPinjamBarang.setOnClickListener {
             startActivity(Intent(this, TambahDataPeminjaman::class.java))
+        }
+        binding.btRiwayatPeminjaman.setOnClickListener {
+            startActivity(Intent(this, RiwayatPeminjaman::class.java))
         }
     }
 

@@ -62,4 +62,12 @@
     <string name="t_hasil_keluar_jam_peminjaman">00.00</string>
     <string name="t_pinjam_barang">Pinjam Barang</string>
     <string name="t_back_peminjaman">Kembali</string>
+    <string name="t_jumlah_riwayat_peminjaman">(Jumlah Barang)</string>
+    <string name="t_jam_peminjaman">Waktu Peminjaman :</string>
+    <string name="t_nama_riwayat">Nama :</string>
+    <string name="t_nim_riwayat">Nim :</string>
+    <string name="t_kelas_riwayat">Kelas :</string>
+    <string name="t_barang_riwayat">Barang Yang di pinjam :</string>
+    <string name="t_waktupinjam_riwayat">Waktu Peminjaman :</string>
+    <string name="t_waktupengembalian_riwayat">Waktu Pengembalian :</string>
 </resources>
