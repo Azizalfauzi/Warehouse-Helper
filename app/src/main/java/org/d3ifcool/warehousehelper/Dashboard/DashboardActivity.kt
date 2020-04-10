@@ -14,6 +14,7 @@ import org.d3ifcool.warehousehelper.tambahdata.TambahData
 import org.d3ifcool.warehousehelper.autentifikasi.LoginActivity
 import org.d3ifcool.warehousehelper.inventaris.CariData
 import org.d3ifcool.warehousehelper.databinding.ActivityDashboardBinding
+import org.d3ifcool.warehousehelper.keluarbarang.KeluarBarang
 import org.d3ifcool.warehousehelper.pinjambarang.TambahDataPeminjaman
 import org.d3ifcool.warehousehelper.riwayatpeminjaman.RiwayatPeminjaman
 
@@ -26,12 +27,7 @@ class DashboardActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard)
         supportActionBar?.title = "Warehouse Helper"
         binding.btTambahBarang.setOnClickListener {
-            startActivity(
-                Intent(
-                    this,
-                    TambahData::class.java
-                )
-            )
+            startActivity(Intent(this, TambahData::class.java))
         }
         binding.btCariBarang.setOnClickListener {
             startActivity(Intent(this, CariData::class.java))
@@ -41,6 +37,9 @@ class DashboardActivity : AppCompatActivity() {
         }
         binding.btRiwayatPeminjaman.setOnClickListener {
             startActivity(Intent(this, RiwayatPeminjaman::class.java))
+        }
+        binding.btKeluarBarang.setOnClickListener {
+            startActivity(Intent(this, KeluarBarang::class.java))
         }
     }
 

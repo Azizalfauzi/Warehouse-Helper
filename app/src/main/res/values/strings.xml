@@ -70,4 +70,9 @@
     <string name="t_barang_riwayat">Barang Yang di pinjam :</string>
     <string name="t_waktupinjam_riwayat">Waktu Peminjaman :</string>
     <string name="t_waktupengembalian_riwayat">Waktu Pengembalian :</string>
+    <string name="t_nama_barang_keluar">Nama Barang</string>
+    <string name="t_jumlah_barang_keluar">Jumlah Barang</string>
+    <string name="t_tanggal_keluar">Tanggal Barang Keluar :</string>
+    <string name="t_date_keluar">DD/MM/YYYY</string>
+    <string name="t_keluar_barang">Keluar Barang</string>
 </resources>

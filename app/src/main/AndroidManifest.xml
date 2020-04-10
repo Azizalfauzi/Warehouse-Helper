@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".riwayatpeminjaman.RiwayatPeminjaman"></activity>
+        <activity android:name=".keluarbarang.KeluarBarang"></activity>
+        <activity android:name=".riwayatpeminjaman.RiwayatPeminjaman" />
         <activity android:name=".pinjambarang.TambahDataPeminjaman" />
         <activity android:name=".inventaris.CariData" />
         <activity android:name=".tambahdata.TambahData" />

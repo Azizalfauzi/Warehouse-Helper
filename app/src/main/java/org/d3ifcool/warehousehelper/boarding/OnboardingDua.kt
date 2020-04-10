@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.boading
+package org.d3ifcool.warehousehelper.boarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/onboardingSatu"
-        android:name="org.d3ifcool.warehousehelper.boading.OnboardingSatu"
+        android:name="org.d3ifcool.warehousehelper.boarding.OnboardingSatu"
         tools:layout="@layout/fragment_onboarding_satu">
         <action
             android:id="@+id/action_onboardingSatu_to_onboardingDua"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/onboardingDua"
-        android:name="org.d3ifcool.warehousehelper.boading.OnboardingDua"
+        android:name="org.d3ifcool.warehousehelper.boarding.OnboardingDua"
         tools:layout="@layout/fragment_onboarding_dua">
         <action
             android:id="@+id/action_onboardingDua_to_onboardingTiga"
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/onboardingTiga"
-        android:name="org.d3ifcool.warehousehelper.boading.OnboardingTiga"
+        android:name="org.d3ifcool.warehousehelper.boarding.OnboardingTiga"
         tools:layout="@layout/fragment_onboarding_tiga">
         <action
             android:id="@+id/action_onboardingTiga_to_loginActivity"
@@ -49,7 +49,7 @@
         tools:layout="@layout/activity_sign_up" />
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="org.d3ifcool.warehousehelper.boading.SplashScreenFragment"
+        android:name="org.d3ifcool.warehousehelper.boarding.SplashScreenFragment"
         tools:layout="@layout/fragment_splash_screen">
         <action
             android:id="@+id/action_splashScreenFragment_to_onboardingSatu"
