@@ -4,14 +4,18 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TimePicker
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_tambah_data_peminjaman.*
+import kotlinx.android.synthetic.main.alertdialog_success_pinjam_barang.view.*
+import kotlinx.android.synthetic.main.alertdialog_success_tambah_data.view.*
 import org.d3ifcool.warehousehelper.Dashboard.DashboardActivity
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityTambahDataPeminjamanBinding
@@ -29,6 +33,7 @@ class TambahDataPeminjaman : AppCompatActivity() {
         //fungsi tambah_data_peminjaman
         binding.btPinjamBarang.setOnClickListener {
             saveDataPeminjaman()
+
         }
         binding.btKembaliPinjamBarang.setOnClickListener {
             startActivity(Intent(this, DashboardActivity::class.java))
@@ -84,11 +89,7 @@ class TambahDataPeminjaman : AppCompatActivity() {
                 waktu_pengembalian
             )
             ref.child(dataId).setValue(data_peminjaman).addOnCompleteListener {
-                Toast.makeText(
-                    applicationContext,
-                    "Berhasil Melakukan Peminjaman",
-                    Toast.LENGTH_SHORT
-                ).show()
+                alertSuccessDialog()
             }
             isClear()
         }
@@ -99,12 +100,26 @@ class TambahDataPeminjaman : AppCompatActivity() {
         return true
     }
 
+    fun alertSuccessDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.alertdialog_success_pinjam_barang, null)
+        //alert dialog builder
+        val mBuilder = AlertDialog.Builder(this)
+            .setView(mDialogView)
+        //show dialog
+        val mAlertDialog = mBuilder.show()
+
+        mDialogView.bt_kembali_pinjam_barang.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
+    }
+
     fun isClear() {
         inp_nama_peminjam.text.clear()
         inp_nim_peminjam.text.clear()
         inp_kelas_peminjam.text.clear()
         tv_hasil_waktu_peminjaman.text = ""
-        tv_hasil_waktu_pengembalian.text =""
+        tv_hasil_waktu_pengembalian.text = ""
 
     }
 

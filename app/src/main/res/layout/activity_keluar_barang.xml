@@ -2,86 +2,93 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".keluarbarang.KeluarBarang">
+        android:fillViewport="true">
 
-        <EditText
-            android:id="@+id/inp_nama_keluar_barang"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:ems="10"
-            android:hint="@string/t_nama_barang_keluar"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".keluarbarang.KeluarBarang">
 
-        <EditText
-            android:id="@+id/inp_jumlah_keluar_barang"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="32dp"
-            android:ems="10"
-            android:hint="@string/t_jumlah_barang_keluar"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inp_nama_keluar_barang" />
+            <EditText
+                android:id="@+id/inp_nama_keluar_barang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:hint="@string/t_nama_barang_keluar"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/t_tanggal_keluar"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inp_jumlah_keluar_barang" />
+            <EditText
+                android:id="@+id/inp_jumlah_keluar_barang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:hint="@string/t_jumlah_barang_keluar"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inp_nama_keluar_barang" />
 
-        <ImageView
-            android:id="@+id/bt_tanggal_keluar_barang"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView25"
-            app:srcCompat="@drawable/ic_calendar_2"
-            tools:ignore="VectorDrawableCompat" />
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/t_tanggal_keluar"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inp_jumlah_keluar_barang" />
 
-        <TextView
-            android:id="@+id/tv_tanggal_keluar_barang"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:text="@string/t_date_keluar"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/bt_tanggal_keluar_barang"
-            app:layout_constraintStart_toEndOf="@+id/bt_tanggal_keluar_barang"
-            app:layout_constraintTop_toTopOf="@+id/bt_tanggal_keluar_barang" />
+            <ImageView
+                android:id="@+id/bt_tanggal_keluar_barang"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView25"
+                app:srcCompat="@drawable/ic_calendar_2"
+                tools:ignore="VectorDrawableCompat" />
 
-        <Button
-            android:id="@+id/bt_keluar_barang_transaksi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/custom_button_2"
-            android:text="@string/t_keluar_barang"
-            android:textColor="@color/colorPrimary"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/tv_tanggal_keluar_barang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/t_date_keluar"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/bt_tanggal_keluar_barang"
+                app:layout_constraintStart_toEndOf="@+id/bt_tanggal_keluar_barang"
+                app:layout_constraintTop_toTopOf="@+id/bt_tanggal_keluar_barang" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/bt_keluar_barang_transaksi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="250dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/custom_button_2"
+                android:text="@string/t_keluar_barang"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_keluar_barang" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

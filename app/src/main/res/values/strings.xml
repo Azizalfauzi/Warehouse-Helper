@@ -40,7 +40,7 @@
     <string name="bt_tambah">Tambah Barang</string>
     <string name="bt_kembali">Back</string>
     <string name="t_barang_masuk">Tanggal Barang Masuk :</string>
-    <string name="t_search">Serach Data...</string>
+    <string name="t_search">Cari Data...</string>
     <string name="bt_edit_data">"Edit "</string>
     <string name="t_jumlah_cari_data">(Jumlah Barang)</string>
     <string name="t_find_nama">Nama Barang :</string>
@@ -75,4 +75,9 @@
     <string name="t_tanggal_keluar">Tanggal Barang Keluar :</string>
     <string name="t_date_keluar">DD/MM/YYYY</string>
     <string name="t_keluar_barang">Keluar Barang</string>
+    <string name="t_success_tambah_data_atas">Yay!</string>
+    <string name="t_success_tambah_data_bawah">"Berhasil Menambahkan Data "</string>
+    <string name="t_success_pinjam_barang">Berhasil Meminjam Barang</string>
+    <string name="bt_kembali_pinjam_barang">Kembali</string>
+    <string name="t_success_keluar_barang">Berhasil Melakukan Keluar Barang</string>
 </resources>

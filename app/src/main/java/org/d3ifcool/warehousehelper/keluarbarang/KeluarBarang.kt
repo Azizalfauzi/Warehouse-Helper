@@ -4,7 +4,9 @@ import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -12,6 +14,8 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_keluar_barang.*
 import kotlinx.android.synthetic.main.activity_tambah_data.*
+import kotlinx.android.synthetic.main.alertdialog_success_keluar_barang.view.*
+import kotlinx.android.synthetic.main.alertdialog_success_tambah_data.view.*
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityKeluarBarangBinding
 import org.d3ifcool.warehousehelper.tambahdata.Data
@@ -33,6 +37,7 @@ class KeluarBarang : AppCompatActivity() {
                 return@setOnClickListener
             } else {
                 keluarBarang()
+                historyBarang()
             }
 
         }
@@ -51,8 +56,45 @@ class KeluarBarang : AppCompatActivity() {
         return true
     }
 
+    fun alertSuccessDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.alertdialog_success_keluar_barang, null)
+        //alert dialog builder
+        val mBuilder = AlertDialog.Builder(this)
+            .setView(mDialogView)
+        //show dialog
+        val mAlertDialog = mBuilder.show()
 
-    fun keluarBarang() {
+        mDialogView.bt_back_keluar_barang.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
+    }
+
+    private fun historyBarang() {
+        val nama_barang = inp_nama_keluar_barang.text.toString().trim()
+        val jumlah_barang = inp_jumlah_keluar_barang.text.toString().toInt()
+        val tanggal_keluar = tv_tanggal_keluar_barang.text.toString()
+
+        val ref = FirebaseDatabase.getInstance().getReference("KeluarBarang")
+
+        val dataId = ref.push().key
+
+        val data = DataKeluarBarang(
+            dataId!!,
+            nama_barang,
+            jumlah_barang,
+            tanggal_keluar
+        )
+
+        ref.child(dataId).setValue(data).addOnCompleteListener {
+            alertSuccessDialog()
+            isclear()
+        }
+
+
+    }
+
+    private fun keluarBarang() {
         var jumlah_barang_keluar = inp_jumlah_keluar_barang.text.toString().toInt()
         FirebaseDatabase.getInstance().reference
             .child("WarehouseHelper")
@@ -75,10 +117,14 @@ class KeluarBarang : AppCompatActivity() {
                         .child("WarehouseHelper")
                         .child(id)
                         .updateChildren(map2 as Map<String, Int>)
-                    Toast.makeText(applicationContext, "Transaksi Berhasil!!", Toast.LENGTH_SHORT)
-                        .show()
                 }
             })
+    }
+
+    fun isclear() {
+        inp_nama_keluar_barang.text.clear()
+        inp_jumlah_keluar_barang.text.clear()
+        tv_tanggal_keluar_barang.text = ""
     }
 
     private fun datePicker() {
@@ -95,8 +141,6 @@ class KeluarBarang : AppCompatActivity() {
         )
         dpd.show()
     }
-
-    fun dataTransaksi() {
-
-    }
 }
+
+

@@ -4,10 +4,14 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_tambah_data.*
+import kotlinx.android.synthetic.main.alertdialog_success_tambah_data.view.*
+import kotlinx.android.synthetic.main.list_data_cari_find.view.*
 import org.d3ifcool.warehousehelper.Dashboard.DashboardActivity
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityTambahDataBinding
@@ -74,10 +78,10 @@ class TambahData : AppCompatActivity() {
             val data = Data(dataId!!, namaBarang, jumlahBarang, hargaBarang, tanggal_masuk)
 
             ref.child(dataId).setValue(data).addOnCompleteListener {
-                Toast.makeText(applicationContext, "Data Berhasil Ditambahkan", Toast.LENGTH_SHORT)
-                    .show()
+                alertSuccessDialog()
             }
             isClear()
+
         }
     }
 
@@ -100,7 +104,21 @@ class TambahData : AppCompatActivity() {
         inp_jumlah_barang_find.text.clear()
         tv_hasil_nama_find.text.clear()
         inp_harga_barang_find.text.clear()
-        tv_hasil_tanggal_find.text="DD/MM/YYYY"
+        tv_hasil_tanggal_find.text = "DD/MM/YYYY"
+    }
+
+    fun alertSuccessDialog() {
+        val mDialogView =
+            LayoutInflater.from(this).inflate(R.layout.alertdialog_success_tambah_data, null)
+        //alert dialog builder
+        val mBuilder = AlertDialog.Builder(this)
+            .setView(mDialogView)
+        //show dialog
+        val mAlertDialog = mBuilder.show()
+
+        mDialogView.bt_back_success_tambah_data.setOnClickListener {
+            mAlertDialog.dismiss()
+        }
     }
 
     fun isInRange(a: Int): Boolean {
