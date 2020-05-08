@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Warehouse Helper</string>
     <string name="app_name_dashboard">Warehouse Helper</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -14,7 +14,7 @@
     <string name="tvemail">Email</string>
     <string name="tvpasswordlog">Password</string>
     <string name="btn_login">Login</string>
-    <string name="regnama">Nama</string>
+    <string name="regnama">Username</string>
     <string name="register">Register</string>
     <string name="regpassword">Password</string>
     <string name="btn_register">Register</string>
@@ -80,4 +80,6 @@
     <string name="t_success_pinjam_barang">Berhasil Meminjam Barang</string>
     <string name="bt_kembali_pinjam_barang">Kembali</string>
     <string name="t_success_keluar_barang">Berhasil Melakukan Keluar Barang</string>
+    <string name="t_splash">Warehouse Helper</string>
+    <string name="t_back_auth">Back</string>
 </resources>

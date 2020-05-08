@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.boarding
+package org.d3ifcool.warehousehelper.ui.fragment
 
 import android.os.Bundle
 import android.view.*

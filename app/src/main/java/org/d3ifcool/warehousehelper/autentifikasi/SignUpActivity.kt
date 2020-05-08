@@ -21,14 +21,11 @@ class SignUpActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             signUpUser()
         }
-        val actionbar = supportActionBar
-        actionbar!!.title = ""
-        actionbar.setDisplayHomeAsUpEnabled(true)
+        binding.btBackAuth.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
     }
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
+
     private fun signUpUser() {
         if (inp_email_reg.text.toString().isEmpty()) {
             inp_email_reg.error = "plase enter email"

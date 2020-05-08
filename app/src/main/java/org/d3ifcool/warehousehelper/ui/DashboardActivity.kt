@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.Dashboard
+package org.d3ifcool.warehousehelper.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,15 +8,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.auth.FirebaseAuth
-import org.d3ifcool.warehousehelper.AboutActivity
 import org.d3ifcool.warehousehelper.R
-import org.d3ifcool.warehousehelper.tambahdata.TambahData
 import org.d3ifcool.warehousehelper.autentifikasi.LoginActivity
-import org.d3ifcool.warehousehelper.inventaris.CariData
 import org.d3ifcool.warehousehelper.databinding.ActivityDashboardBinding
-import org.d3ifcool.warehousehelper.keluarbarang.KeluarBarang
-import org.d3ifcool.warehousehelper.pinjambarang.TambahDataPeminjaman
-import org.d3ifcool.warehousehelper.riwayatpeminjaman.RiwayatPeminjaman
+import org.d3ifcool.warehousehelper.ui.activity.*
 
 
 class DashboardActivity : AppCompatActivity() {
@@ -24,8 +19,11 @@ class DashboardActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard)
+
         supportActionBar?.title = "Warehouse Helper"
+
         binding.btTambahBarang.setOnClickListener {
             startActivity(Intent(this, TambahData::class.java))
         }

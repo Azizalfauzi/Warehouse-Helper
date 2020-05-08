@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.tambahdata
+package org.d3ifcool.warehousehelper.model
 
 class Data(
     val id: String,

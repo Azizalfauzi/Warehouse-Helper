@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.keluarbarang
+package org.d3ifcool.warehousehelper.model
 
 class DataKeluarBarang(
     val id: String,

@@ -1,11 +1,9 @@
-package org.d3ifcool.warehousehelper.keluarbarang
+package org.d3ifcool.warehousehelper.ui.activity
 
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.DataSnapshot
@@ -13,12 +11,10 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_keluar_barang.*
-import kotlinx.android.synthetic.main.activity_tambah_data.*
 import kotlinx.android.synthetic.main.alertdialog_success_keluar_barang.view.*
-import kotlinx.android.synthetic.main.alertdialog_success_tambah_data.view.*
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityKeluarBarangBinding
-import org.d3ifcool.warehousehelper.tambahdata.Data
+import org.d3ifcool.warehousehelper.model.DataKeluarBarang
 import java.util.*
 
 class KeluarBarang : AppCompatActivity() {

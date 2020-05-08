@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.pinjambarang
+package org.d3ifcool.warehousehelper.ui.activity
 
 import android.app.TimePickerDialog
 import android.content.Intent
@@ -8,17 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.TimePicker
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_tambah_data_peminjaman.*
 import kotlinx.android.synthetic.main.alertdialog_success_pinjam_barang.view.*
-import kotlinx.android.synthetic.main.alertdialog_success_tambah_data.view.*
-import org.d3ifcool.warehousehelper.Dashboard.DashboardActivity
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityTambahDataPeminjamanBinding
+import org.d3ifcool.warehousehelper.model.DataPeminjaman
+import org.d3ifcool.warehousehelper.ui.DashboardActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -78,16 +76,17 @@ class TambahDataPeminjaman : AppCompatActivity() {
 
             val ref = FirebaseDatabase.getInstance().getReference("PeminjamanBarang")
             val dataId = ref.push().key
-            val data_peminjaman = DataPeminjaman(
-                dataId!!,
-                inp_nama,
-                inp_nim,
-                kelas,
-                pilihan_barang,
-                jumlah_pilihan,
-                waktu_peminjaman,
-                waktu_pengembalian
-            )
+            val data_peminjaman =
+                DataPeminjaman(
+                    dataId!!,
+                    inp_nama,
+                    inp_nim,
+                    kelas,
+                    pilihan_barang,
+                    jumlah_pilihan,
+                    waktu_peminjaman,
+                    waktu_pengembalian
+                )
             ref.child(dataId).setValue(data_peminjaman).addOnCompleteListener {
                 alertSuccessDialog()
             }

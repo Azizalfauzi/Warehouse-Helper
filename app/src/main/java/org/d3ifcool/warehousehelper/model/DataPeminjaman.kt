@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.pinjambarang
+package org.d3ifcool.warehousehelper.model
 
 class DataPeminjaman(
     val id: String,

@@ -1,13 +1,26 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#00FFFFFF</item>
         <item name="colorPrimaryDark">#00FFFFFF</item>
-        <item name="colorAccent">#F44336</item>
+        <item name="colorAccent">#CC0000</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <style name="AuthTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">#CC0000</item>
+    </style>
+
+    <style name="DashboardTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">#CC0000</item>
+        <item name="colorPrimaryDark">#CC0000</item>
+        <item name="colorAccent">#CC0000</item>
+    </style>
 
 
 </resources>

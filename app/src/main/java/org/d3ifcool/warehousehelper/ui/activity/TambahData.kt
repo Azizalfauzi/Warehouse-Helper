@@ -1,20 +1,19 @@
-package org.d3ifcool.warehousehelper.tambahdata
+package org.d3ifcool.warehousehelper.ui.activity
 
 import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_tambah_data.*
 import kotlinx.android.synthetic.main.alertdialog_success_tambah_data.view.*
-import kotlinx.android.synthetic.main.list_data_cari_find.view.*
-import org.d3ifcool.warehousehelper.Dashboard.DashboardActivity
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityTambahDataBinding
+import org.d3ifcool.warehousehelper.model.Data
+import org.d3ifcool.warehousehelper.ui.DashboardActivity
 import java.util.*
 
 class TambahData : AppCompatActivity() {
@@ -75,7 +74,13 @@ class TambahData : AppCompatActivity() {
 
             val dataId = ref.push().key
 
-            val data = Data(dataId!!, namaBarang, jumlahBarang, hargaBarang, tanggal_masuk)
+            val data = Data(
+                dataId!!,
+                namaBarang,
+                jumlahBarang,
+                hargaBarang,
+                tanggal_masuk
+            )
 
             ref.child(dataId).setValue(data).addOnCompleteListener {
                 alertSuccessDialog()

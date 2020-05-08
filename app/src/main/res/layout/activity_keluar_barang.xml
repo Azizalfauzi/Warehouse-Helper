@@ -11,7 +11,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".keluarbarang.KeluarBarang">
+            tools:context=".ui.activity.KeluarBarang">
 
             <EditText
                 android:id="@+id/inp_nama_keluar_barang"

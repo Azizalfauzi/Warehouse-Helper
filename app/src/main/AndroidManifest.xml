@@ -9,24 +9,65 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".keluarbarang.KeluarBarang"></activity>
-        <activity android:name=".riwayatpeminjaman.RiwayatPeminjaman" />
-        <activity android:name=".pinjambarang.TambahDataPeminjaman" />
-        <activity android:name=".inventaris.CariData" />
-        <activity android:name=".tambahdata.TambahData" />
-        <activity android:name=".Dashboard.DashboardActivity" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".autentifikasi.SignUpActivity" />
-        <activity android:name=".autentifikasi.LoginActivity" />
+
         <activity
-            android:name=".MainActivity"
-            android:screenOrientation="fullSensor">
+            android:name=".ui.activity.KeluarBarang"
+            android:theme="@style/DashboardTheme">
+
+        </activity>
+        <activity
+            android:name=".ui.activity.RiwayatPeminjaman"
+            android:theme="@style/DashboardTheme">
+
+        </activity>
+        <activity
+            android:name=".ui.activity.TambahDataPeminjaman"
+            android:theme="@style/DashboardTheme">
+
+        </activity>
+        <activity
+            android:name=".ui.activity.CariData"
+            android:theme="@style/DashboardTheme">
+
+        </activity>
+        <activity
+            android:name=".ui.activity.TambahData"
+            android:theme="@style/DashboardTheme">
+
+        </activity>
+        <activity
+            android:name=".ui.DashboardActivity"
+            android:theme="@style/DashboardTheme">
+
+        </activity>
+        <activity android:name=".ui.AboutActivity" />
+        <activity
+            android:name=".autentifikasi.SignUpActivity"
+            android:theme="@style/AuthTheme">
+
+        </activity>
+        <activity
+            android:name=".autentifikasi.LoginActivity"
+            android:theme="@style/AuthTheme">
+
+        </activity>
+        <activity
+            android:name=".ui.SplashScreen"
+            android:noHistory="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.MainActivity">
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

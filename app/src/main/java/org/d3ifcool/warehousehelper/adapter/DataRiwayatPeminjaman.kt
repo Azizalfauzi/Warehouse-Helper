@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.riwayatpeminjaman
+package org.d3ifcool.warehousehelper.adapter
 
 import android.app.AlertDialog
 import android.content.Context
@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import kotlinx.android.synthetic.main.list_data_riwayat_peminjaman.view.*
 import org.d3ifcool.warehousehelper.R
-import org.d3ifcool.warehousehelper.pinjambarang.DataPeminjaman
+import org.d3ifcool.warehousehelper.model.DataPeminjaman
 
 class DataRiwayatPeminjaman(
     val mCtx: Context,

@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.riwayatpeminjaman
+package org.d3ifcool.warehousehelper.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.widget.ListView
 import androidx.databinding.DataBindingUtil
 import com.google.firebase.database.*
 import org.d3ifcool.warehousehelper.R
+import org.d3ifcool.warehousehelper.adapter.DataRiwayatPeminjaman
 import org.d3ifcool.warehousehelper.databinding.ActivityRiwayatPeminjamanBinding
-import org.d3ifcool.warehousehelper.pinjambarang.DataPeminjaman
-import org.d3ifcool.warehousehelper.tambahdata.Data
+import org.d3ifcool.warehousehelper.model.DataPeminjaman
 
 class RiwayatPeminjaman : AppCompatActivity() {
     private lateinit var binding: ActivityRiwayatPeminjamanBinding
@@ -50,11 +50,12 @@ class RiwayatPeminjaman : AppCompatActivity() {
                         val data = h.getValue(DataPeminjaman::class.java)
                         dataList.add(data!!)
                     }
-                    val adapter = DataRiwayatPeminjaman(
-                        this@RiwayatPeminjaman,
-                        R.layout.list_data_riwayat_peminjaman,
-                        dataList
-                    )
+                    val adapter =
+                        DataRiwayatPeminjaman(
+                            this@RiwayatPeminjaman,
+                            R.layout.list_data_riwayat_peminjaman,
+                            dataList
+                        )
                     listView.adapter = adapter
                 }
             }

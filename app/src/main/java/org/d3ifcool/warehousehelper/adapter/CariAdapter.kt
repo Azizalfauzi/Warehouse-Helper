@@ -1,4 +1,4 @@
-package org.d3ifcool.warehousehelper.inventaris
+package org.d3ifcool.warehousehelper.adapter
 
 import android.app.AlertDialog
 import android.content.Context
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.*
 import com.google.firebase.database.FirebaseDatabase
 import org.d3ifcool.warehousehelper.R
-import org.d3ifcool.warehousehelper.tambahdata.Data
+import org.d3ifcool.warehousehelper.model.Data
 
 
 class CariAdapter(val mCtx: Context, val layoutResId: Int, val dataList: List<Data>) :
@@ -106,7 +106,13 @@ class CariAdapter(val mCtx: Context, val layoutResId: Int, val dataList: List<Da
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                val data = Data(data.id, nama_barang, jumlah_barang, harga_barang, tanggal_masuk)
+                val data = Data(
+                    data.id,
+                    nama_barang,
+                    jumlah_barang,
+                    harga_barang,
+                    tanggal_masuk
+                )
                 dbData.child(data.id).setValue(data)
                 Toast.makeText(mCtx, "Data Berhasil di Update!", Toast.LENGTH_SHORT).show()
             }

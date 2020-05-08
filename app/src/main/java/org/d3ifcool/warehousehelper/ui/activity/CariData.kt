@@ -1,9 +1,8 @@
-package org.d3ifcool.warehousehelper.inventaris
+package org.d3ifcool.warehousehelper.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.EditText
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
@@ -13,8 +12,9 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_cari_data.*
 import kotlinx.android.synthetic.main.list_data_cari_find.view.*
 import org.d3ifcool.warehousehelper.R
+import org.d3ifcool.warehousehelper.adapter.CariAdapter
 import org.d3ifcool.warehousehelper.databinding.ActivityCariDataBinding
-import org.d3ifcool.warehousehelper.tambahdata.Data
+import org.d3ifcool.warehousehelper.model.Data
 
 class CariData : AppCompatActivity() {
     private lateinit var binding: ActivityCariDataBinding
@@ -60,7 +60,12 @@ class CariData : AppCompatActivity() {
                         val data = h.getValue(Data::class.java)
                         dataList.add(data!!)
                     }
-                    val adapter = CariAdapter(this@CariData, R.layout.list_data_cari, dataList)
+                    val adapter =
+                        CariAdapter(
+                            this@CariData,
+                            R.layout.list_data_cari,
+                            dataList
+                        )
                     listView.adapter = adapter
                 }
             }
