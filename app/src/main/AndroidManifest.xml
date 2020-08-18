@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.d3ifcool.warehousehelper">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,48 +11,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.activity.SettingsActivity"
+            android:theme="@style/AuthTheme">
 
+        </activity>
+        <activity android:name=".autentifikasi.ConfirmAccount" />
+        <activity
+            android:name=".autentifikasi.RegistrasiActivity"
+            android:theme="@style/AuthTheme" />
+        <activity
+            android:name=".autentifikasi.ResetPasswordActivity"
+            android:theme="@style/AuthTheme" />
+        <activity
+            android:name=".ui.activity.ProfileActivity"
+            android:theme="@style/AuthTheme" />
+        <activity
+            android:name=".ui.activity.Pilihan_Barang_Peminjaman"
+            android:theme="@style/AuthTheme" />
+        <activity
+            android:name=".ui.activity.InventarisBarang"
+            android:theme="@style/AuthTheme" />
         <activity
             android:name=".ui.activity.KeluarBarang"
-            android:theme="@style/DashboardTheme">
-
-        </activity>
+            android:theme="@style/AuthTheme" />
         <activity
             android:name=".ui.activity.RiwayatPeminjaman"
-            android:theme="@style/DashboardTheme">
-
-        </activity>
+            android:theme="@style/AuthTheme" />
         <activity
             android:name=".ui.activity.TambahDataPeminjaman"
-            android:theme="@style/DashboardTheme">
-
-        </activity>
-        <activity
-            android:name=".ui.activity.CariData"
-            android:theme="@style/DashboardTheme">
-
-        </activity>
+            android:theme="@style/AddTheme" />
         <activity
             android:name=".ui.activity.TambahData"
-            android:theme="@style/DashboardTheme">
-
-        </activity>
+            android:theme="@style/AddTheme" />
         <activity
             android:name=".ui.DashboardActivity"
-            android:theme="@style/DashboardTheme">
-
-        </activity>
+            android:theme="@style/DashboardTheme" />
         <activity android:name=".ui.AboutActivity" />
         <activity
-            android:name=".autentifikasi.SignUpActivity"
-            android:theme="@style/AuthTheme">
-
-        </activity>
-        <activity
             android:name=".autentifikasi.LoginActivity"
-            android:theme="@style/AuthTheme">
-
-        </activity>
+            android:theme="@style/AuthTheme" />
         <activity
             android:name=".ui.SplashScreen"
             android:noHistory="true"
@@ -61,9 +61,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MainActivity">
-
-        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:theme="@style/AppTheme" />
 
         <meta-data
             android:name="preloaded_fonts"

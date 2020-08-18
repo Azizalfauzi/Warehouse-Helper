@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="test_color">#03fc88</color>
+    <color name="test_background">#CC0000</color>
+    <color name="color_ad">#ADADAD</color>
+    <color name="color_success">#3BB575</color>
 </resources>

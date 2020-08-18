@@ -13,111 +13,200 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/tv_hasil_nama_find"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:hint="@string/t_nama_barang"
-                android:inputType="textPersonName"
+                android:layout_height="70dp"
+                android:background="@color/test_background"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/inp_jumlah_barang_find"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:hint="@string/t_jumlah_barang"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_hasil_nama_find" />
-
-            <EditText
-                android:id="@+id/inp_harga_barang_find"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:hint="@string/t_harga_barang"
-                android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inp_jumlah_barang_find" />
-
-            <Button
+            <ImageView
                 android:id="@+id/bt_back_tambah_barang"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_nim_peminjaman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/raleway"
+                android:text="@string/tambah_barang"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/bt_back_tambah_barang"
+                app:layout_constraintStart_toEndOf="@+id/bt_back_tambah_barang"
+                app:layout_constraintTop_toTopOf="@+id/bt_back_tambah_barang" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
-                android:background="@drawable/custom_button"
-                android:text="@string/bt_kembali"
-                android:textColor="@android:color/holo_red_dark"
+                android:hint="Nama Barang"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/test_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bt_tambah_barang" />
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
-            <Button
-                android:id="@+id/bt_tambah_barang"
-                android:layout_width="0dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_nama_barang_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_light" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout13"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="120dp"
                 android:layout_marginEnd="32dp"
-                android:background="@drawable/custom_button_2"
-                android:text="@string/bt_tambah"
-                android:textColor="@color/colorPrimary"
+                android:hint="Jumlah Barang"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/test_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_pilihan" />
+                android:fontFamily="@font/open_sans_light"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_jumlah_barang_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_light" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Harga Barang"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/test_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout13">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_harga_barang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_light" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Barang Masuk :"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
             <ImageView
                 android:id="@+id/tv_tanggal_pilihan"
                 android:layout_width="30dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"
-                app:srcCompat="@drawable/ic_calendar_2"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/textView9"
+                app:srcCompat="@drawable/ic_date"
                 tools:ignore="VectorDrawableCompat" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/t_barang_masuk"
-                android:textSize="17sp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inp_harga_barang_find" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_tanggal_pilihan">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView16"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_camera"
+                        tools:ignore="VectorDrawableCompat" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/raleway_light"
+                        android:text="Add Photo"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView16"
+                        app:layout_constraintStart_toStartOf="@+id/imageView16"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/bt_tambah_barang"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Tambah Barang"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
             <TextView
-                android:id="@+id/tv_hasil_tanggal_find"
+                android:id="@+id/tv_hasil_tanggal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:text="@string/t_tanggal_pilihan"
-                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/open_sans"
+                android:text="12/Nov/2020"
                 app:layout_constraintBottom_toBottomOf="@+id/tv_tanggal_pilihan"
                 app:layout_constraintStart_toEndOf="@+id/tv_tanggal_pilihan"
                 app:layout_constraintTop_toTopOf="@+id/tv_tanggal_pilihan" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </ScrollView>
 </layout>

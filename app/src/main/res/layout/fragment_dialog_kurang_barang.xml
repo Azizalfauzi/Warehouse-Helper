@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.DialogKurangBarang">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView25"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="90dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView48"
+                app:srcCompat="@drawable/ic_random_stock"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/tv_nama_dialog_kurang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="TextView"
+                android:textColor="@color/test_background"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+                app:layout_constraintStart_toEndOf="@+id/imageView25"
+                app:layout_constraintTop_toTopOf="@+id/imageView25" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Stock :"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_nama_dialog_kurang"
+                app:layout_constraintStart_toStartOf="@+id/tv_nama_dialog_kurang"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nama_dialog_kurang" />
+
+            <TextView
+                android:id="@+id/tv_jumlah_dialog_kurang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="TextView"
+                android:textColor="@color/test_background"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView44"
+                app:layout_constraintStart_toStartOf="@+id/textView44"
+                app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+            <Button
+                android:id="@+id/bt_keluar_barang_dialog"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="170dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Kurang Barang"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                app:backgroundTint="@color/test_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/bt_plus_dialog"
+                app:layout_constraintStart_toStartOf="@+id/bt_minus_dialog"
+                app:layout_constraintTop_toBottomOf="@+id/inp_kurang_dialog" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway"
+                android:text="Kurang Stok Barang"
+                android:textColor="@color/test_background"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/inp_kurang_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="0"
+                android:textColor="@color/test_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_jumlah_dialog_kurang" />
+
+            <Button
+                android:id="@+id/bt_plus_dialog"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/montserrat"
+                android:text="+"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                app:backgroundTint="@color/test_background"
+                app:layout_constraintBottom_toBottomOf="@+id/inp_kurang_dialog"
+                app:layout_constraintStart_toEndOf="@+id/inp_kurang_dialog"
+                app:layout_constraintTop_toTopOf="@+id/inp_kurang_dialog" />
+
+            <Button
+                android:id="@+id/bt_minus_dialog"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:text="-"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                app:backgroundTint="@color/test_background"
+                app:layout_constraintBottom_toBottomOf="@+id/inp_kurang_dialog"
+                app:layout_constraintEnd_toStartOf="@+id/inp_kurang_dialog"
+                app:layout_constraintTop_toTopOf="@+id/inp_kurang_dialog" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

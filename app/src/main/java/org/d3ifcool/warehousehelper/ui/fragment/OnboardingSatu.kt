@@ -27,9 +27,6 @@ class OnboardingSatu : Fragment() {
         binding.btnNextsatu.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_onboardingSatu_to_onboardingDua)
         }
-        binding.btnSkipsatu.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_onboardingSatu_to_loginActivity)
-        }
         return binding.root
     }
 }

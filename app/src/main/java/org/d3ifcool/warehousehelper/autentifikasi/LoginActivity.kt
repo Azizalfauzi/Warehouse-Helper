@@ -1,11 +1,16 @@
 package org.d3ifcool.warehousehelper.autentifikasi
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.Toast
+import android.view.View
 import androidx.databinding.DataBindingUtil
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login.*
@@ -14,78 +19,83 @@ import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+    //variable global untuk mengakses auth firebase
     private lateinit var auth: FirebaseAuth
+
+    //variable global untuk untuk memanggil layar menggunakan binding
+    private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding =
-            DataBindingUtil.setContentView<ActivityLoginBinding>(this, R.layout.activity_login)
+        //inisialisasikan untuk firebase auth
         auth = FirebaseAuth.getInstance()
-
+        //panggil layar menggunakan binding
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
+        //button berpindah ke register
         binding.btRegLogin.setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java))
+            //fungsi berpindah ke register activity
+            startActivity(Intent(this, RegistrasiActivity::class.java))
         }
-        binding.btnlogin.setOnClickListener {
-            doLogin()
+        //button login ketika di klik
+        binding.btnLogin.setOnClickListener {
+            //inisialisasikan variable inputan
+            val email = inp_email_login.text.toString().trim()
+            val pass = inp_pass_login.text.toString().trim()
+            //lakukan pengecekan inputan email apakah kosong
+            if (email.isEmpty()) {
+                inp_email_login.error = "plase enter email"
+                inp_email_login.requestFocus()
+                return@setOnClickListener
+            }
+            if (!Patterns.EMAIL_ADDRESS.matcher(inp_email_login.text.toString()).matches()) {
+                inp_email_login.error = "plase enter email"
+                inp_email_login.requestFocus()
+                return@setOnClickListener
+            }
+            //lakukan pengecekan inputan apakah password kosong
+            if (pass.isEmpty()) {
+                inp_pass_login.error = "please enter password"
+                inp_pass_login.requestFocus()
+                return@setOnClickListener
+            }
+            //fungsi login menggunakan 2 param
+            doLogin(email, pass)
+        }
+        //button berpindah ke lupas password
+        binding.tvForgotPassword.setOnClickListener {
+            startActivity(Intent(this, ResetPasswordActivity::class.java))
         }
     }
 
-    private fun doLogin() {
-        if (inp_email_login.text.toString().isEmpty()) {
-            inp_email_login.error = "plase enter email"
-            inp_email_login.requestFocus()
-            return
-        }
-        if (!Patterns.EMAIL_ADDRESS.matcher(inp_email_login.text.toString()).matches()) {
-            inp_email_login.error = "plase enter email"
-            inp_email_login.requestFocus()
-            return
-        }
-        if (inp_pass_login.text.toString().isEmpty()) {
-            inp_pass_login.error = "please enter password"
-            inp_pass_login.requestFocus()
-            return
-        }
-        auth.signInWithEmailAndPassword(
-            inp_email_login.text.toString(),
-            inp_pass_login.text.toString()
-        )
+    //fungsi login
+    private fun doLogin(email: String, pass: String) {
+        //panggil proggresbar untuk aktif
+        progressBar.visibility = View.VISIBLE
+        //panggil auth untuk koneksi menggunakan method di bawah ini
+        auth.signInWithEmailAndPassword(email, pass)
+            //setelah berhasil kerjakan fungsi ini
             .addOnCompleteListener(this) { task ->
+                //panggil proggres bar dan hilangkan karena berhasil
+                progressBar.visibility = View.GONE
+                //setelah berhasil
                 if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    updateUI(user)
-                    finish()
+                    //panggil herlper untuk berpindah ke halaman dashboard
+                    login()
                 } else {
-                    Toast.makeText(
-                        baseContext, "Password / Email anda salah",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    updateUI(null)
+                    //jika gagal panggil exception dan tampilkan pesan kegagalan
+                    task.exception?.message?.let {
+                        toast(it)
+//                        tv_forgot_password.visibility = View.VISIBLE
+                    }
                 }
             }
     }
 
+    //jalan kan fungsi yang diatas
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        updateUI(currentUser)
-    }
-
-    private fun updateUI(currentUser: FirebaseUser?) {
-        if (currentUser != null) {
-            if (currentUser.isEmailVerified) {
-                startActivity(Intent(this, DashboardActivity::class.java))
-            } else {
-                Toast.makeText(
-                    baseContext, "Lakukan verifikasi email anda",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        } else {
-            Toast.makeText(
-                baseContext, "Lakukan Login Terlebih dahulu",
-                Toast.LENGTH_SHORT
-            ).show()
+        auth.currentUser?.let {
+            login()
         }
     }
 }

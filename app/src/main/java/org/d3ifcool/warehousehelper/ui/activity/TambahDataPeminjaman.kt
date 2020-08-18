@@ -8,96 +8,89 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
-import com.google.firebase.database.FirebaseDatabase
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_tambah_data_peminjaman.*
 import kotlinx.android.synthetic.main.alertdialog_success_pinjam_barang.view.*
 import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityTambahDataPeminjamanBinding
 import org.d3ifcool.warehousehelper.model.DataPeminjaman
 import org.d3ifcool.warehousehelper.ui.DashboardActivity
+import org.d3ifcool.warehousehelper.viewmodel.PeminjamanViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
 class TambahDataPeminjaman : AppCompatActivity() {
-
+    private lateinit var viewModel: PeminjamanViewModel
     private lateinit var binding: ActivityTambahDataPeminjamanBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_tambah_data_peminjaman)
-
-        //fungsi tambah_data_peminjaman
+//        viewModel = ViewModelProviders.of(this).get(PeminjamanViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(PeminjamanViewModel::class.java)
+        val dataFetch = intent.getStringExtra("tv_kirim")
+        if (dataFetch != null) {
+            binding.tvHasilPilihan.text = dataFetch.toString()
+        }
         binding.btPinjamBarang.setOnClickListener {
-            saveDataPeminjaman()
+            val namaPeminjam = inp_nama_peminjam.text.toString().trim()
+            val nimPeminjam = inp_nim_peminjam.text.toString().trim()
+            val kelasPeminjam = inp_kelas_peminjam.text.toString().trim()
+            val deskripsiPeminjaman = inp_deskripsi_peminjaman.text.toString().trim()
+            if (namaPeminjam.isEmpty()) {
+                inp_nama_peminjam.error = "Nama Peminjam Tidak Boleh Kosong!"
+                return@setOnClickListener
+            } else if (nimPeminjam.isEmpty()) {
+                inp_nim_peminjam.error = "Nim Peminjam Tidak Boleh Kosong!"
+                return@setOnClickListener
+            } else if (kelasPeminjam.isEmpty()) {
+                inp_kelas_peminjam.error = "Kelas Peminjam Tidak Boleh Kosong!"
+                return@setOnClickListener
+            } else if (deskripsiPeminjaman.isEmpty()) {
+                inp_deskripsi_peminjaman.error = "Deskripsi Peminjaman Tidak Boleh Kosong!"
+                return@setOnClickListener
+            } else {
+                val nama_peminjam = inp_nama_peminjam.text.toString()
+                val nim_peminjam = inp_nim_peminjam.text.toString()
+                val kelas_peminjam = inp_kelas_peminjam.text.toString()
+                val barang = tv_hasil_pilihan.text.toString()
+                val jumlahBarang = tv_hasil_jumlah_peminjaman.text.toString().toInt()
+                val jamPeminjaman = tv_hasil_waktu_peminjaman.text.toString()
+                val jamPengembalian = tv_hasil_waktu_pengembalian.text.toString()
+                val deskripsiPeminjaman = inp_deskripsi_peminjaman.text.toString()
 
+                val dataPeminjaman = DataPeminjaman()
+                dataPeminjaman.nama_peminjam = nama_peminjam
+                dataPeminjaman.nim_peminjam = nim_peminjam
+                dataPeminjaman.kelas_peminjam = kelas_peminjam
+                dataPeminjaman.pilihan_barang = barang
+                dataPeminjaman.jumlah_barang = jumlahBarang
+                dataPeminjaman.waktu_peminjaman = jamPeminjaman
+                dataPeminjaman.waktu_pengembalian = jamPengembalian
+                dataPeminjaman.deskripsi_peminjaman = deskripsiPeminjaman
+                viewModel.addPeminjaman(dataPeminjaman)
+                alertSuccessDialog()
+            }
         }
         binding.btKembaliPinjamBarang.setOnClickListener {
-            startActivity(Intent(this, DashboardActivity::class.java))
+            startActivity(Intent(this, Pilihan_Barang_Peminjaman::class.java))
         }
         //fungsi spinner
-        optionSelected()
         optionSelected2()
 
         //fungsi time_picker
-        binding.btWaktuPinjam.setOnClickListener {
+        binding.imgWaktuPinjam.setOnClickListener {
             timePicker()
         }
-        binding.btWaktuPengembalian.setOnClickListener {
+        binding.imgWaktuPengembalian.setOnClickListener {
             timePicker2()
         }
-
-        //toolbar
-        val actionbar = supportActionBar
-        actionbar!!.title = "Pinjam Barang"
-        actionbar.setDisplayHomeAsUpEnabled(true)
-
     }
 
-    //save data peminjaman
-    private fun saveDataPeminjaman() {
-        if (inp_nama_peminjam.text.isEmpty()) {
-            inp_nama_peminjam.error = "Masukan Nama Peminjam"
-            return
-        } else if (inp_nim_peminjam.text.isEmpty()) {
-            inp_nim_peminjam.error = "Masukan Nama Peminjam"
-            return
-        } else if (inp_kelas_peminjam.text.isEmpty()) {
-            inp_kelas_peminjam.error = "Masukan Kelas Peminjam"
-        } else {
-            val inp_nama = inp_nama_peminjam.text.toString().trim()
-            val inp_nim = inp_nim_peminjam.text.toString().trim()
-            val kelas = inp_kelas_peminjam.text.toString().trim()
-            val pilihan_barang = tv_hasil_pilihan.text.toString()
-            val jumlah_pilihan = tv_hasil_jumlah_peminjaman.text.toString()
-            val waktu_peminjaman = tv_hasil_waktu_peminjaman.text.toString()
-            val waktu_pengembalian = tv_hasil_waktu_pengembalian.text.toString()
-
-            val ref = FirebaseDatabase.getInstance().getReference("PeminjamanBarang")
-            val dataId = ref.push().key
-            val data_peminjaman =
-                DataPeminjaman(
-                    dataId!!,
-                    inp_nama,
-                    inp_nim,
-                    kelas,
-                    pilihan_barang,
-                    jumlah_pilihan,
-                    waktu_peminjaman,
-                    waktu_pengembalian
-                )
-            ref.child(dataId).setValue(data_peminjaman).addOnCompleteListener {
-                alertSuccessDialog()
-            }
-            isClear()
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
 
     fun alertSuccessDialog() {
         val mDialogView =
@@ -110,16 +103,8 @@ class TambahDataPeminjaman : AppCompatActivity() {
 
         mDialogView.bt_kembali_pinjam_barang.setOnClickListener {
             mAlertDialog.dismiss()
+            startActivity(Intent(this, DashboardActivity::class.java))
         }
-    }
-
-    fun isClear() {
-        inp_nama_peminjam.text.clear()
-        inp_nim_peminjam.text.clear()
-        inp_kelas_peminjam.text.clear()
-        tv_hasil_waktu_peminjaman.text = ""
-        tv_hasil_waktu_pengembalian.text = ""
-
     }
 
     //time picker
@@ -157,40 +142,15 @@ class TambahDataPeminjaman : AppCompatActivity() {
         ).show()
     }
 
-    //spinner
-    private fun optionSelected() {
-        val option = binding.spinnerBarang
-        val result = binding.tvHasilPilihan
-
-        val options =
-            arrayOf("-", "Proyektor", "Kabel Proyektor", "Stop Kontak")
-
-        option.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, options)
-
-        option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                result.text = "Tolong Pilih salah satu"
-            }
-
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                result.text = options.get(position)
-            }
-        }
-    }
 
     private fun optionSelected2() {
         val option = binding.spinnerJumlah
         val result = binding.tvHasilJumlahPeminjaman
 
         val options =
-            arrayOf("-", "1", "2", "3")
+            arrayOf(0, 1, 2, 3)
 
-        option.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, options)
+        option.adapter = ArrayAdapter<Int>(this, android.R.layout.simple_list_item_1, options)
 
         option.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -203,7 +163,7 @@ class TambahDataPeminjaman : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
-                result.text = options.get(position)
+                result.text = options.get(position).toString()
             }
         }
     }

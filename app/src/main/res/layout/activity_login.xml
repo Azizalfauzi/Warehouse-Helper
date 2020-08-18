@@ -15,114 +15,164 @@
             android:layout_height="wrap_content">
 
 
-            <TextView
-                android:id="@+id/tv_login"
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="40dp"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/tvlogin"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textSize="52sp"
-                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_emaillreg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="48dp"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/tvemail"
-                android:textColor="@android:color/background_dark"
-                android:textSize="14sp"
+            <ImageView
+                android:id="@+id/imageView29"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="60dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_login" />
-
-            <TextView
-                android:id="@+id/tv_passlog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/tvpasswordlog"
-                android:textColor="@android:color/background_dark"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inp_email_login" />
-
-            <Button
-                android:id="@+id/btnlogin"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/custom_button_2"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/btn_login"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintEnd_toEndOf="@+id/inp_pass_login"
-                app:layout_constraintStart_toStartOf="@+id/inp_pass_login"
-                app:layout_constraintTop_toBottomOf="@+id/inp_pass_login" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_icon_red" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="60dp"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/t_reg"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+                android:fontFamily="@font/raleway"
+                android:text="Hello,"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView29" />
 
-            <Button
-                android:id="@+id/bt_reg_login"
-                android:layout_width="0dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout11"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/custom_button_2"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/bt_reg_login"
-                android:textColor="@color/colorAccent"
-                app:layout_constraintEnd_toEndOf="@+id/btnlogin"
-                app:layout_constraintStart_toStartOf="@+id/btnlogin"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Email"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/test_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView62">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_email_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_email"
+                    android:fontFamily="@font/raleway_light"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHighlight="@android:color/darker_gray"
+                    android:visibility="visible" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout12"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Password"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxBackgroundColor="#FFFFFF"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@android:color/darker_gray"
+                app:helperTextTextColor="#FFFFFF"
+                app:hintTextColor="@color/test_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout11"
+                app:passwordToggleTint="@android:color/darker_gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_pass_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_light"
+                    android:inputType="textPassword"
+                    android:textColor="@android:color/darker_gray"
+                    android:textColorHighlight="@android:color/holo_red_dark"
+                    android:textColorHint="@color/test_background" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/raleway"
+                android:text="Lupa Password ?"
+                android:textColor="@color/test_background"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout12"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/raleway"
+                android:text="Warehouse Officer"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <EditText
-                android:id="@+id/inp_email_login"
-                android:layout_width="0dp"
+            <ImageView
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:fontFamily="@font/montserrat"
-                android:inputType="textPersonName"
-                android:text="@string/t_email"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="64dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_emaillreg" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password"
+                app:srcCompat="@drawable/ic_login"
+                tools:ignore="VectorDrawableCompat" />
 
-            <EditText
-                android:id="@+id/inp_pass_login"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:fontFamily="@font/montserrat"
-                android:inputType="textPassword"
-                android:text="@string/t_pass"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_passlog" />
+                android:fontFamily="@font/raleway"
+                android:text="New Account ?"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_login"
+                app:layout_constraintStart_toStartOf="@+id/btn_login"
+                app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+            <TextView
+                android:id="@+id/bt_reg_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/raleway"
+                android:text="Sign Up"
+                android:textColor="@color/test_background"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView63"
+                app:layout_constraintStart_toEndOf="@+id/textView63"
+                app:layout_constraintTop_toTopOf="@+id/textView63" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

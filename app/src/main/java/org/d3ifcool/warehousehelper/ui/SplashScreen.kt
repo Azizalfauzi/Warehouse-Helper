@@ -10,7 +10,7 @@ class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-
+        //fungsi splash screen untuk background halaman pertama
         val background = object : Thread() {
             override fun run() {
                 try {

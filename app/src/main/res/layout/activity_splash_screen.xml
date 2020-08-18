@@ -8,23 +8,22 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        android:background="@drawable/custom_img"
+        android:layout_width="150dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.48"
-        app:srcCompat="@drawable/ic_warehousehelper" />
+        app:srcCompat="@drawable/ic_icon_red" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/raleway_medium"
         android:text="@string/t_splash"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="20sp"

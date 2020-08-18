@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation2"
+    app:startDestination="@id/inventarisBarangFragment">
+
+    <fragment
+        android:id="@+id/inventarisBarangFragment"
+        android:name="org.d3ifcool.warehousehelper.ui.fragment.InventarisBarangFragment"
+        android:label="fragment_inventaris_barang"
+        tools:layout="@layout/fragment_inventaris_barang" />
+</navigation>

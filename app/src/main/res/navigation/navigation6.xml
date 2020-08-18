@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation6"
+    app:startDestination="@id/accountConfirm">
+
+    <fragment
+        android:id="@+id/accountConfirm"
+        android:name="org.d3ifcool.warehousehelper.autentifikasi.AccountConfirm"
+        android:label="fragment_account_confirm"
+        tools:layout="@layout/fragment_account_confirm" />
+</navigation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation3"
+    app:startDestination="@id/kurangBarangFragment">
+
+    <fragment
+        android:id="@+id/kurangBarangFragment"
+        android:name="org.d3ifcool.warehousehelper.ui.fragment.KurangBarangFragment"
+        android:label="fragment_kurang_barang"
+        tools:layout="@layout/fragment_kurang_barang" />
+</navigation>

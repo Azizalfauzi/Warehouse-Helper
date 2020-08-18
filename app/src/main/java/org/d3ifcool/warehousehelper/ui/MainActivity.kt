@@ -8,9 +8,9 @@ import org.d3ifcool.warehousehelper.R
 import org.d3ifcool.warehousehelper.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //fungsi binding untuk memanggil layout
         val binding =
             DataBindingUtil.setContentView<ActivityMainBinding>(
                 this,

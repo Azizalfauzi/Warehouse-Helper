@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/onboardingSatu">
+    app:startDestination="@id/onboardingNol">
 
     <fragment
         android:id="@+id/onboardingSatu"
@@ -12,9 +12,6 @@
         <action
             android:id="@+id/action_onboardingSatu_to_onboardingDua"
             app:destination="@id/onboardingDua" />
-        <action
-            android:id="@+id/action_onboardingSatu_to_loginActivity"
-            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/onboardingDua"
@@ -37,24 +34,16 @@
         android:name="org.d3ifcool.warehousehelper.autentifikasi.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
-    <activity
-        android:id="@+id/menu_about"
-        android:name="org.d3ifcool.warehousehelper.ui.AboutActivity"
-        android:label="activity_about"
-        tools:layout="@layout/activity_about" />
-    <activity
-        android:id="@+id/signUpActivity"
-        android:name="org.d3ifcool.warehousehelper.autentifikasi.SignUpActivity"
-        android:label="activity_sign_up"
-        tools:layout="@layout/activity_sign_up" />
-    <activity
-        android:id="@+id/dashboardActivity"
-        android:name="org.d3ifcool.warehousehelper.ui.DashboardActivity"
-        android:label="@string/app_name_dashboard"
-        tools:layout="@layout/activity_dashboard" />
-    <activity
-        android:id="@+id/tambahData"
-        android:name="org.d3ifcool.warehousehelper.ui.activity.TambahData"
-        android:label="activity_tambah_data"
-        tools:layout="@layout/activity_tambah_data" />
+    <fragment
+        android:id="@+id/onboardingNol"
+        android:name="org.d3ifcool.warehousehelper.ui.fragment.OnboardingNol"
+        android:label="fragment_onboarding_nol"
+        tools:layout="@layout/fragment_onboarding_nol" >
+        <action
+            android:id="@+id/action_onboardingNol_to_onboardingSatu"
+            app:destination="@id/onboardingSatu" />
+        <action
+            android:id="@+id/action_onboardingNol_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
 </navigation>

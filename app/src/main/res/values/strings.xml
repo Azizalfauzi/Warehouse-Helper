@@ -2,6 +2,12 @@
     <string name="app_name">Warehouse Helper</string>
     <string name="app_name_dashboard">Warehouse Helper</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="yes">Yes</string>
+    <string name="nodelete">No</string>
+    <string name="update">Update Data</string>
+    <string name="update_toolbar_peminjaman">Update Data Peminjaman</string>
+    <string name="update_inventaris">Update Data</string>
+    <string name="update_toolbar_inventaris">Update Data Barang</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tambah_barang">Tambah Barang</string>
     <string name="memudahkan_petugas_logistik_untuk_melakukan_pengelolaan_data_barang">Memudahkan Petugas Logistik untuk melakukan Pengelolaan data barang</string>
@@ -82,4 +88,6 @@
     <string name="t_success_keluar_barang">Berhasil Melakukan Keluar Barang</string>
     <string name="t_splash">Warehouse Helper</string>
     <string name="t_back_auth">Back</string>
+    <string name="t_tanggal_masuk">Tanggal Barang Masuk :</string>
+    <string name="tv_kirim">Proyektor</string>
 </resources>

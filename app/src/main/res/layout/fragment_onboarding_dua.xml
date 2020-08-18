@@ -15,10 +15,10 @@
 
             <ImageView
                 android:id="@+id/iv_caribarang"
-                android:layout_width="200dp"
-                android:layout_height="177dp"
+                android:layout_width="170dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="110dp"
                 android:layout_marginEnd="16dp"
                 android:src="@drawable/ic_undraw_file_searching_duff"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -29,45 +29,68 @@
                 android:id="@+id/tv_pencarianbarang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/raleway"
                 android:text="@string/cari_barang"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/test_background"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_caribarang" />
 
             <TextView
                 android:id="@+id/tv_kalimatdua"
-                android:layout_width="170dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/memudahkan_petugas_logistik_untuk_melakukan_pencarian_barang"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Cari barang jadi"
                 android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_pencarianbarang" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="230dp"
+                android:layout_marginBottom="65dp"
                 android:src="@drawable/ic_group_dua"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_kalimatdua" />
+                app:layout_constraintTop_toBottomOf="@+id/textView61" />
 
             <Button
                 android:id="@+id/btn_nextdua"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:background="@drawable/custom_button_2"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="65dp"
+                android:fontFamily="@font/raleway_medium"
                 android:text="@string/next"
                 android:textColor="@color/colorAccent"
-                app:layout_constraintEnd_toEndOf="@+id/tv_kalimatdua"
-                app:layout_constraintStart_toStartOf="@+id/tv_kalimatdua"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                android:textSize="12sp"
+                app:backgroundTint="@color/test_background"
+                app:cornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="lebih mudah"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_kalimatdua" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

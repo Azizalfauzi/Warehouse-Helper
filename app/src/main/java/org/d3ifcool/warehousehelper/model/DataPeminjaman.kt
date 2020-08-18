@@ -1,14 +1,29 @@
 package org.d3ifcool.warehousehelper.model
 
-class DataPeminjaman(
-    val id: String,
-    val nama_peminjam: String,
-    val nim_peminjam: String,
-    val kelas_peminjam: String,
-    val pilihan_barang: String,
-    val jumlah_barang: String,
-    val waktu_peminjaman: String,
-    val waktu_pengembalian: String
+import com.google.firebase.database.Exclude
+
+
+data class DataPeminjaman(
+    @get:Exclude
+    var id: String? = null,
+    var nama_peminjam: String? = null,
+    var nim_peminjam: String? = null,
+    var kelas_peminjam: String? = null,
+    var pilihan_barang: String? = null,
+    var jumlah_barang: Int? = 0,
+    var waktu_peminjaman: String? = null,
+    var waktu_pengembalian: String? = null,
+    var deskripsi_peminjaman: String? = null,
+    @get:Exclude
+    var isDelete: Boolean = false
 ) {
-    constructor() : this("", "", "", "", "", "", "", "")
+    override fun equals(other: Any?): Boolean {
+        return if (other is DataPeminjaman) {
+            other.id == id
+        } else false
+    }
+
+    override fun hashCode(): Int {
+        return id?.hashCode() ?: 0
+    }
 }

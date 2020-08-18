@@ -13,202 +13,306 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/inp_nama_peminjam"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar3"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:hint="@string/t_nama_peminjaman"
-                android:inputType="textPersonName"
+                android:layout_height="60dp"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/inp_nim_peminjam"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:hint="@string/t_nim_peminjam"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inp_nama_peminjam" />
-
-            <EditText
-                android:id="@+id/inp_kelas_peminjam"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:hint="@string/t_kelas_peminjam"
-                android:inputType="textPersonName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inp_nim_peminjam" />
-
-            <Spinner
-                android:id="@+id/spinner_barang"
-                android:layout_width="185dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:padding="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/tv_hasil_pilihan"
+            <ImageView
+                android:id="@+id/bt_kembali_pinjam_barang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/t_barang_pinjam"
-                android:textSize="18sp"
-                android:visibility="gone"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inp_kelas_peminjam" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back"
+                tools:ignore="VectorDrawableCompat" />
 
             <TextView
-                android:id="@+id/tv_hasil_jumlah_peminjaman"
+                android:id="@+id/toolbar_peminjaman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/t_jumlah_pinjam"
-                android:textSize="18sp"
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_hasil_pilihan" />
-
-            <Spinner
-                android:id="@+id/spinner_jumlah"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:padding="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Tambah Data Peminjaman"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@+id/bt_kembali_pinjam_barang"
+                app:layout_constraintStart_toEndOf="@+id/bt_kembali_pinjam_barang"
+                app:layout_constraintTop_toTopOf="@+id/bt_kembali_pinjam_barang" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/t_kata_pinjam"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Data Peminjam "
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/inp_kelas_peminjam" />
+                app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/t_kata_jumlah"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner_barang" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/t_jam_masuk_pinjaman"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner_jumlah" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/t_jamkembali_pinjaman"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bt_waktu_pinjam" />
-
-            <Button
-                android:id="@+id/bt_pinjam_barang"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:background="@drawable/custom_button_2"
-                android:text="@string/t_pinjam_barang"
-                android:textColor="@color/colorPrimary"
+                android:hint="Nama Peminjam"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/test_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bt_waktu_pengembalian" />
+                app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_nama_peminjam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_light" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Nim Peminjam"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/test_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_nim_peminjam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_light" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout6"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Kelas Peminjam"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/test_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_kelas_peminjam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_light" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Barang yang dipinjam"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Nama Barang"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="Jumlah Barang"
+                app:layout_constraintBottom_toBottomOf="@+id/textView35"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView35" />
+
+            <TextView
+                android:id="@+id/tv_hasil_pilihan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Proyektor"
+                android:textColor="@color/test_background"
+                app:layout_constraintEnd_toEndOf="@+id/textView35"
+                app:layout_constraintStart_toStartOf="@+id/textView35"
+                app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+            <TextView
+                android:id="@+id/tv_hasil_jumlah_peminjaman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="2"
+                android:textColor="@color/test_background"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/textView37"
+                app:layout_constraintStart_toStartOf="@+id/textView37"
+                app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+            <TextView
+                android:id="@+id/textView87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Waktu Peminjaman"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hasil_pilihan" />
+
+            <TextView
+                android:id="@+id/textView93"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Waktu Pengembalian"
+                app:layout_constraintBottom_toBottomOf="@+id/textView87"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView87" />
+
+            <ImageView
+                android:id="@+id/img_waktu_pinjam"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView87"
+                app:srcCompat="@drawable/ic_jam"
+                tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:id="@+id/tv_hasil_waktu_peminjaman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/t_hasil_jam_masuk_peminjaman"
-                android:textColor="@android:color/holo_red_dark"
-                app:layout_constraintBottom_toBottomOf="@+id/bt_waktu_pinjam"
-                app:layout_constraintStart_toEndOf="@+id/bt_waktu_pinjam"
-                app:layout_constraintTop_toTopOf="@+id/bt_waktu_pinjam" />
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="Select Time"
+                app:layout_constraintBottom_toBottomOf="@+id/img_waktu_pinjam"
+                app:layout_constraintStart_toEndOf="@+id/img_waktu_pinjam"
+                app:layout_constraintTop_toTopOf="@+id/img_waktu_pinjam" />
 
             <TextView
                 android:id="@+id/tv_hasil_waktu_pengembalian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/t_hasil_keluar_jam_peminjaman"
-                android:textColor="@android:color/holo_red_dark"
-                app:layout_constraintBottom_toBottomOf="@+id/bt_waktu_pengembalian"
-                app:layout_constraintStart_toEndOf="@+id/bt_waktu_pengembalian"
-                app:layout_constraintTop_toTopOf="@+id/bt_waktu_pengembalian" />
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:text="Select Time"
+                app:layout_constraintBottom_toBottomOf="@+id/img_waktu_pengembalian"
+                app:layout_constraintStart_toEndOf="@+id/img_waktu_pengembalian"
+                app:layout_constraintTop_toTopOf="@+id/img_waktu_pengembalian" />
 
-            <Button
-                android:id="@+id/bt_kembali_pinjam_barang"
-                android:layout_width="0dp"
+            <ImageView
+                android:id="@+id/img_waktu_pengembalian"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="108dp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_waktu_pinjam"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/img_waktu_pinjam"
+                app:srcCompat="@drawable/ic_jam"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/textView96"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Deskrpisi Peminjaman"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_waktu_pinjam" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout14"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
-                android:background="@drawable/custom_button"
-                android:text="@string/t_back_peminjaman"
-                android:textColor="@android:color/holo_red_dark"
+                android:hint="Deskripsi Peminjamaman"
+                android:textColorHint="@android:color/darker_gray"
+                app:boxStrokeColor="@color/test_background"
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/test_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bt_pinjam_barang" />
+                app:layout_constraintTop_toBottomOf="@+id/textView96">
 
-            <ImageView
-                android:id="@+id/bt_waktu_pinjam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16"
-                app:srcCompat="@drawable/ic_jam_peminjaman"
-                tools:ignore="VectorDrawableCompat" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inp_deskripsi_peminjaman"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_light" />
 
-            <ImageView
-                android:id="@+id/bt_waktu_pengembalian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/bt_pinjam_barang"
+                android:layout_width="200dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/raleway_light"
+                android:text="Pinjam Barang"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9"
-                app:srcCompat="@drawable/ic_jam_peminjaman"
-                tools:ignore="VectorDrawableCompat" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout14" />
+
+            <Spinner
+                android:id="@+id/spinner_jumlah"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textView37"
+                app:layout_constraintStart_toStartOf="@+id/textView37"
+                app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

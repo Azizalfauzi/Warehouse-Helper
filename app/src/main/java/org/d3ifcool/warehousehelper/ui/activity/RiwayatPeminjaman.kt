@@ -1,64 +1,97 @@
 package org.d3ifcool.warehousehelper.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ListView
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
 import androidx.databinding.DataBindingUtil
-import com.google.firebase.database.*
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.pinjam_recyclerview.view.*
 import org.d3ifcool.warehousehelper.R
-import org.d3ifcool.warehousehelper.adapter.DataRiwayatPeminjaman
 import org.d3ifcool.warehousehelper.databinding.ActivityRiwayatPeminjamanBinding
 import org.d3ifcool.warehousehelper.model.DataPeminjaman
+import org.d3ifcool.warehousehelper.ui.DashboardActivity
+import org.d3ifcool.warehousehelper.viewmodel.PeminjamanViewModel
+import org.marproject.reusablerecyclerviewadapter.ReusableAdapter
+import org.marproject.reusablerecyclerviewadapter.interfaces.AdapterCallback
 
 class RiwayatPeminjaman : AppCompatActivity() {
+    //binding
     private lateinit var binding: ActivityRiwayatPeminjamanBinding
-    lateinit var ref: DatabaseReference
-    lateinit var listView: ListView
-    lateinit var dataList: MutableList<DataPeminjaman>
+
+    //viewmodel
+    private lateinit var viewModel: PeminjamanViewModel
+
+    //reusable adapter
+    private lateinit var adapter: ReusableAdapter<DataPeminjaman>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_riwayat_peminjaman)
 
-        //read data from database
-        readDataDatabase()
-        //toolbar
-        //toolbar
-        val actionbar = supportActionBar
-        actionbar!!.title = "Riwayat Peminjaman"
-        actionbar.setDisplayHomeAsUpEnabled(true)
+        binding.btBackPeminjaman.setOnClickListener {
+            startActivity(Intent(this, DashboardActivity::class.java))
+        }
+        viewModel = ViewModelProvider(this).get(PeminjamanViewModel::class.java)
 
-    }
+        //panggil fungsi viewmodel fetch data
+        viewModel.fetchPeminjaman()
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
+        //panggil fungsi get real time database
+        viewModel.getRealtimeDatabase()
 
-    private fun readDataDatabase() {
-        ref = FirebaseDatabase.getInstance().getReference("PeminjamanBarang")
-        dataList = mutableListOf()
-        listView = findViewById(R.id.list_data_riwayat)
-        ref.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
+        //init adapter
+        adapter = ReusableAdapter(this)
+        //setup adapter
+        setupAdapter(binding.rvRiwayatData)
 
-            }
+        //set observer untuk adapter list
+        viewModel.dataPeminjaman.observe({ lifecycle }, {
+            adapter.addData(it)
+        })
+        //set observe untuk adapter list dia sendiri
+        viewModel.peminjaman.observe({ lifecycle }, {
+            adapter.updateData(it)
+        })
+        val searchData = binding.searchTextPeminjaman
+        //search data
+        searchData.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {}
 
-            override fun onDataChange(p0: DataSnapshot) {
-                if (p0.exists()) {
-                    dataList.clear()
-                    for (h in p0.children) {
-                        val data = h.getValue(DataPeminjaman::class.java)
-                        dataList.add(data!!)
-                    }
-                    val adapter =
-                        DataRiwayatPeminjaman(
-                            this@RiwayatPeminjaman,
-                            R.layout.list_data_riwayat_peminjaman,
-                            dataList
-                        )
-                    listView.adapter = adapter
-                }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                adapter.filter.filter(s)
             }
         })
+    }
+
+    private fun setupAdapter(recyclerView: RecyclerView) {
+        adapter.adapterCallback(adapterCallback)
+            .setLayout(R.layout.pinjam_recyclerview)
+            .filterable()
+            .isVerticalView()
+            .build(recyclerView)
+    }
+
+    private val adapterCallback = object : AdapterCallback<DataPeminjaman> {
+        override fun initComponent(itemView: View, data: DataPeminjaman, itemIndex: Int) {
+            // init utils
+            itemView.tv_nama_peminjaman.text = data.nama_peminjam
+            itemView.tv_jumlah_peminjaman.text = data.jumlah_barang.toString()
+            itemView.tv_nim_peminjaman.text = data.nim_peminjam
+            itemView.tv_kelas_peminjaman.text = data.kelas_peminjam
+            itemView.tv_barang_peminjaman.text = data.pilihan_barang
+            itemView.tv_waktu_peminjaman.text = data.waktu_peminjaman
+            itemView.tv_waktu_pengembalian.text = data.waktu_pengembalian
+        }
+
+        // fungsi ini dipakai kalau kita click 1 layout recyclerviewnya
+        override fun onItemClicked(itemView: View, data: DataPeminjaman, itemIndex: Int) {
+
+        }
     }
 }
